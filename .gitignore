@@ -22,6 +22,7 @@ dist/
 build/
 
 # Ignore editor and IDE settings saved only for this machine
+.vscode/
 .vscode/settings.json
 .vscode/tasks.json
 .vscode/launch.json
