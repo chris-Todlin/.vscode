@@ -1,0 +1,47 @@
+{
+  "name": "book-library-api",
+  "version": "1.0.0",
+  "description": "- Create a digital book library. \r - Use the books as [task](`../Book Library API`)",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "book API",
+    "Tasks"
+  ],
+  "author": "Mwakai Mwadime",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bootstrap": "^5.3.8",
+    "compression": "^1.8.1",
+    "connect-flash": "^0.1.1",
+    "consolidate": "^1.0.4",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-handlebars": "^9.0.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.5.0",
+    "morgan": "^1.10.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.2.9",
+    "serve-favicon": "^2.5.1"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "forever": "^4.0.3",
+    "mocha": "^11.7.5"
+  }
+}

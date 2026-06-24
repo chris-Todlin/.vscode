@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fitness Tracker</h1>
+            {{#if signedIn}}
+                <nav>
+                    <button id="dashboard">Dashboard</button>
+                    <button id="logout">Log Out</button>
+                </nav>
+            {{/if}}
+        </header>
+        <main>
+            {{{body}}}
+        </main>
+    </div>
+</body>
+</html>

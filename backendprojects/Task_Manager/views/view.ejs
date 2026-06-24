@@ -1,0 +1,23 @@
+<%# view page of the note with an edit an delete capabilities %>
+<%- include('./partials/_header.ejs') %>
+    <div class="mt-3 container-fluid">
+        <a href="/task/tasks" type="button" class="btn btn-secondary">Back</a>
+    </div>
+    <div class="header mt-4 mb-3 d-flex flex-column justify-content-between align-items-center">
+        <div class="unknown d-flex justify-content-between gap-4 align-items-center">
+            <h2><%= task.title %></h2>
+            <span class="badge bg-info" title="click to change status" style="cursor: pointer;">Mark as Complete</span>
+        </div>
+        <section class="card" style="width: 80%;">
+            <p class="card-body">
+                <%= task.description %>
+            </p>
+            <div class="group d-flex card-footer justify-content-between align-items-center">
+                <button type="button" id="edit" class="btn btn-primary">Edit</button>
+                <a href="/task/deletetask/<%= task._id %>" type="button" id="delete" class="btn btn-danger">Delete</a>
+            </div>
+        </section>
+    </div>
+    <%# Script file for th eback button, edit and delete button %>
+    <script src="/js/view.js"></script>
+<%- include('./partials/_footer.ejs') %>

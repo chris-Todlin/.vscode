@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/img/book-svgrepo-com.svg" type="image/x-icon">
+</head>
+<body  class="d-flex flex-column min-vh-100">
+    <header class="mb-3">
+        <nav class="navbar p-2 navbar-expand-md navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">Movie Search API</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/book">Books</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/task">Task</a>
+                        </li>
+                        <% if (currentUser) { %>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="/img/three-dots-vertical-svgrepo-com.svg" alt="Options">
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#"><%= currentUser.getUserName() %></a>
+                                <a class="dropdown-item" href="/logout">logOut</a>
+                            </div>
+                        </li>
+                    <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="flex-grow-1 container">
+        <%# The main content goes in here %>
+        <%# Plae for the infos  %>
+        <% if (infos) { %>
+            <%# REdnder the erros %>
+            <% infos.forEach(info => { %>
+                <div class="alert mb-2 alert-info alert-dismissible fade show" role="alert">
+                    <p><%= info %></p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <% }) %>
+        <% } %>

@@ -1,0 +1,37 @@
+<article class="container tab-pane fade" id="temprature">
+            <div class="header header-content">
+                <h2>Temprature</h2>
+            </div>
+            <section class="py-2">
+                <form name="temprature" action="/converttemprature" class="form-control" method="post" enctype="application/x-www-form-urlencoded">
+                    <div class="form-label d-flex flex-column">
+                        <label for="magnitude" class="form-label">Magnitude: </label>
+                        <input type="number" name="magnitude" id="magnitude" placeholder="10" min="0" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="from" class="form-label">From: </label>
+                        <%# Select for the value of the from to convert to  %>
+                        <select name="from" id="from" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="celcius"  class="option-text-width-control">Degrees Celcius</option>
+                            <option value="fah" class="option-text-width-control">Fahreinheit</option>
+                            <option value="kelvin" class="option-text-width-control">Kelvin</option>
+                        </select>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="to" class="form-label">To: </label>
+                        <%# Select for the value of the to to convert to  %>
+                        <select name="to" id="to" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="kelvin" class="option-text-width-control">Kelvin</option>
+                            <option value="fah" class="option-text-width-control">Fahreinheit</option>
+                            <option value="celcius" class="option-text-width-control">Degrees Celcius</option>
+                        </select>
+                    </div>
+                    <%# Button for the conversion of the results %>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Convert</button>
+                    </div>
+                </form>
+            </section>
+        </article>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Application</title>
+    <link rel="stylesheet" href="css/recipe.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Recipe Application</h1>
+        </header>
+        <article class="recipelist">
+            <h2>Recipe List</h2>
+
+            <div class="list">
+            {{!-- Appending the body of the section --}}
+            {{#each recipes}}
+                <section class="recipe" id="{{index}}">
+                    {{!-- Title --}}
+                    <h3>{{title}}</h3>
+                    {{!-- Image --}}
+                    <img src="img/poster.png" alt="poster">
+                    <p>
+                        <strong>Description</strong>
+                        {{description}}
+                    </p>
+                </section>
+            {{/each}}
+            </div>
+        </article>
+    </div>
+    <script>
+        document.querySelectorAll('.recipe').forEach((sect)=>{
+            sect.addEventListener('click',(e)=>{
+                location.href = `/hbsversion/view/${e.target.parentElement.id}`;
+            })
+        })
+    </script>
+</body>
+</html>

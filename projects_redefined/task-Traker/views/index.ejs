@@ -1,0 +1,84 @@
+<%- include('./partials/_header.ejs') %>
+<section class="container py-5 mb-5">
+    <div class="header" style="display: flex; justify-content:space-between; align-items:center;">
+        <h1 class="header title" style="text-underline-offset: 2px; text-decoration: underline">Tasks</h1>
+
+        <section class="flex align-content-center justify-center">
+            <a href="/taskapp/addtask" class="btn btn-primary rounded align-self-center" role="button">Add Task</a>
+        </section>
+
+        <% if (tasks.length) { %>
+        <a role="button" href="/taskapp/deletealltasks/" class="btn btn-danger">Delete All</a>
+        <% } %>
+    </div>
+
+    <!-- If there are tasks do that thing -->
+    <% if (tasks.length) { %>
+        <div class="row">
+            <div class="col-2">
+                <form name="filter" action="/filtertask" method="get">
+                <p>Filter by:</p>
+                <label class=" form-label">
+                    <select class="opt group mb-2 py-1 gap-4 rounded" name="filterstatus" id="status">
+                        <option class="option-text" value="" selected></option>
+                        <option class="option-text" value="todo">todo</option>
+                        <option class="option-text" value="in-progress">In-progress</option>
+                        <option class="option-text" value="done">Done</option>
+                    </select>
+                </label>
+                </form>
+            </div>
+        <% tasks.forEach(task => { %>
+        <div class="row sm:col-auto">
+            <div class="col -10 card mt-4 max-w-3xl">
+            <div class="card-header" style="display: flex; justify-content:space-between; align-items:center;">
+                <h3><%=task.title%></h3>
+                <p class="date"><%=task.createdAt.toString().substring(0,15)%></p>
+                <p class="badge bg-dark"><%=task.status%></p>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    <pre class=" first-line:indent-0">
+                        <%=task.description%></pre>
+                    </pre>
+                </p>
+            </div>
+            <div class="btn-group-sm flex card-footer" style="display:flex; justify-content:space-between; align-items: center;">
+                <a role="button" href="/taskapp/edittask/<%= task._id %>" class="btn btn-primary ">Edit</a>
+                <a role="button" href="/taskapp/deletetask/<%= task._id %>" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+        </div>
+        <% }) %>
+        </div>
+    <% } else { %>
+        <div class="container info bg-info text-center flex align-content-center justify-center rounded" style="height: 40vh; font-size: 3rem">
+            <p class="p-2 text-center">
+                No save Tasks!
+            </p>
+        </div>
+    <% } %>
+</section>
+
+<script>
+    const filterForm = document.forms.filter;
+
+    const selectFilter = filterForm.filterstatus;
+
+    selectFilter.addEventListener("change",async(e)=>{
+        await fetch("/taskapp/filtertask",{
+            method: "post",
+            body:  JSON.stringify({filterParam: "in-progress"}),
+            headers: {
+                "Content-type": "application/json"
+            }
+        }).then(async (res)=>{
+            document.querySelectorAll(".opt option").forEach(el=>{
+                console.log(el.getAttribute("selected"));
+            })
+            const tasks = await res.json();
+            console.log(tasks);
+        })
+    })
+</script>
+<%- include('./partials/_footer.ejs') %>

@@ -1,0 +1,107 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, skyblue, #87c2d6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    width: 50vw;
+    height: 30vw;
+    background-color:azure;
+    border-radius: 0.6rem 0.6rem 0 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    overflow-y: scroll;
+}
+
+.mess-bot {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+}
+
+.mess-me {
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.4rem;
+    box-shadow: 1px 2px 4px rgba(34,56,23,0.3);
+    width: 13rem;
+    background: linear-gradient(45deg, #d6e4e4, #a8b4b4);
+    border-radius: 0.5rem;
+    text-wrap: wrap;
+    color: burlywood;
+}
+
+.sender2 {
+    align-self: flex-end;
+    font-size: 1rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    color: green;
+}
+
+.sender1 {
+    align-self: flex-start;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
+    color: maroon;
+}
+
+.me {
+    background: linear-gradient(40deg, #c42f2f, #9b3131);
+}
+.bot {
+    background: linear-gradient(40deg, #518a51, #539453);
+}
+
+form {
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:azure;
+    border-top: 2px solid lightgray;
+    padding: 0 0.1rem;
+}
+
+input {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    width: 29.5rem;
+    color: grey
+}
+
+button {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}

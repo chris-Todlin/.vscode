@@ -1,0 +1,46 @@
+{
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "bootstrap": "^5.3.8",
+    "cluster": "^0.7.7",
+    "compression": "^1.8.1",
+    "connect-mongo": "^6.0.0",
+    "consolidate": "^1.0.4",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "errorhandler": "^1.5.2",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3",
+    "method-override": "^3.0.0",
+    "mongoose": "^9.6.2",
+    "morgan": "^1.10.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "rotating-file-stream": "^3.2.9",
+    "sqlite3": "^6.0.1",
+    "superagent": "^10.3.0"
+  },
+  "name": "personal-blogging-platform",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "init:mvc": "node mvc-init.js",
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "nodemon": "^3.1.14"
+  }
+}

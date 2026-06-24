@@ -1,0 +1,28 @@
+Weather Information API
+
+- OpenWeatherMap API 
+- JSON 
+- RESTFUL API 
+
+# Create the main project folder 
+    - add the pckage.json and log.txt 
+    - Add the modules: npm install express morgan rotating-file-stream express-session jsonwebtoken --save 
+    - For the tests npm install mocha chai --save-dev 
+
+# Create the main app
+    - add the start future in the package json 
+    - create the server 
+    - Add the logger 
+    - Add the session 
+
+# weather Data 
+  # Fetch b current city 
+    - Create the weatherAPI to retieve the data via the 
+    - Done wonderfully
+  # return temprature humidy and conditions
+  # cache response
+
+ # add the front end for that
+
+ # login and session of the user 
+ 

@@ -1,0 +1,39 @@
+<header>
+    <h1>{{username}}</h1>
+    <nav>
+        <button type="button">Add Post</button>
+        <button type="button">Log Out</button>
+    </nav>
+</header>
+<main>
+    <div class="posts">
+        {{#if posts}} 
+            {{#each posts}}
+                <section class="post">
+                    <h4>{{title}}</h4>
+                    <p>
+                        {{{content}}}
+                    </p>
+                </section>
+            {{/each}}
+            <script>
+            const locationSlash = location.href.lastIndexOf('/') + 1;
+            document.querySelectorAll('button')[0].addEventListener('click',()=>{
+                location.href = `/post?name=${location.href.substring(locationSlash)}`;
+            });
+    </script>
+        {{else}}
+            <div class="nopost">
+                <p>
+                    You have no posts. <br>
+                    <a href="/post">click here to add</a>.
+                </p>
+            </div>
+            <script>
+                const locationSlash = location.href.lastIndexOf('/') + 1;
+
+                document.links[0].href = `/post?name=${location.href.substring(locationSlash)}`;
+            </script>
+        {{/if}}
+    </div>
+</main>

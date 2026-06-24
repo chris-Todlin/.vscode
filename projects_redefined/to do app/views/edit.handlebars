@@ -1,0 +1,25 @@
+<header>
+    <h1>Title</h1>
+</header>
+
+<main>
+    {{!-- If the edit details are tere --}}
+    {{#if task}}
+        <form action="/edittask" method="post" class="task">
+            <div class="hidden">
+                <input type="hidden" name="id" value="{{id}}">
+            </div>
+            <div class="inputs">
+                <label for="taskname">Name</label>
+                <input type="text" name="name" id="taskname" placeholder="Task name" value="{{task.title}}"  required>
+            </div>
+            <div class="inputs">
+                <label for="task">Task</label>
+                <input type="text" name="task" id="task" value="{{task.task}}" placeholder="Task..." required>
+            </div>
+            <div class="btn">
+                <button type="submit">Edit Task</button>
+            </div>
+        </form>
+    {{/if}}
+</main>

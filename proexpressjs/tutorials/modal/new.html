@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trial case for the targert</title>
+    <style>
+        .section {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+        
+        /* The modal of the page */
+        .overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal  {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            min-width: 300px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        /* the three dots thech */
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1ps solid #ccc;
+            list-style: none;
+            padding: 5px;
+        }
+
+        .menu li {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+
+        .menu li:hover {
+            background-color: #eee;
+        }
+
+        .toast {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        background: #333;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 4px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        }
+        .toast.show {
+        opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <button data-target="section1">Section 1</button>
+            <button data-target="section2">Section 2</button>
+            <button data-target="section3">Section 3</button>
+        </nav>
+    </header>
+    <main>
+        <div class="section active" id="section1">Section 1</div>
+        <div class="section" id="section2">Section 2</div>
+        <div class="section" id="section3">Section 3</div>
+        
+        <!-- Creating a modal  -->
+        <button id="openModal">Open Modal</button>
+
+        <!-- The modal section -->
+        <section class="overlay" id="modalOverlay">
+            <div class="modal">
+                <h2>Delete Item</h2>
+                <p>Are ou sure you want to delete this?</p>
+                <form>
+                    <button type="submit">Confirm</button>
+                    <button type="button" id="closeModal">Cancel</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- the trhree dots -->
+        <div class="card">
+            <p>Eat Lunch</p>
+            <button class="menu-btn">⋮</button>
+            <ul class="menu">
+                <li>Edit</li>
+                <li>Delete</li>
+                <li>Share</li>
+            </ul>
+        </div>
+
+        <!-- Taost on the way -->
+        <form id="authForm">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+            <button type="submit" id="submitBtn">Login</button>
+        </form>
+
+        <div id="toast" class="toast hidden"></div>
+
+    </main>
+
+    <!-- Script for the file -->
+    <script>
+        document.querySelectorAll("button").forEach(btn=>{
+            btn.addEventListener("click",()=>{
+                const targetId = btn.getAttribute("data-target");
+
+                // remove teh active 
+                document.querySelectorAll(".section").forEach(sec=>{
+                    sec.classList.remove("active");
+                });
+
+                document.getElementById(targetId).classList.add("active");
+            })
+        })
+
+        // dealing with the modal 
+        const overlay = document.getElementById("modalOverlay");
+        const openBtn = document.getElementById("openModal");
+        const closeBtn = document.getElementById("closeModal");
+
+        openBtn.addEventListener("click",()=>{
+            overlay.style.display = "flex";
+        });
+
+        closeBtn.addEventListener("click",()=>{
+            overlay.style.display = "none";
+        });
+
+        // Optional: close when clicking outside modal
+        overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.style.display = "none";
+        }
+        });
+
+        // now the iconic dropdown 
+        document.querySelectorAll(".menu-btn").forEach(btn=>{
+            btn.addEventListener("click",()=>{
+                const menu = btn.nextElementSibling;
+
+                document.querySelectorAll(".menu").forEach(m=>{
+                    m.style.display = "none";
+                })
+
+                menu.style.display = "block";
+            })
+        })
+
+        // Optional: close menu when clicking outside
+        document.addEventListener("click", (e) => {
+        if (!e.target.classList.contains("menu-btn")) {
+            document.querySelectorAll(".menu").forEach(m => m.style.display = "none");
+        }
+        });
+
+        // for the toast of the user
+        const form = document.getElementById('authForm');
+const toast = document.getElementById('toast');
+const submitBtn = document.getElementById('submitBtn');
+
+        form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.innerHTML = '<span class="spinner"></span>'; // spinner
+
+  try {
+    // Replace with real API call
+    const success = await fakeLogin(); 
+
+    if (success) {
+      submitBtn.innerHTML = '<span class="tick">✔️</span>';
+      showToast(`Welcome, ${usernameInput.value}!`);
+      setTimeout(() => form.classList.add('hidden'), 1000); // fade out
+    } else {
+      showToast(`Invalid credentials for ${usernameInput.value}`);
+      submitBtn.innerHTML = 'Login'; // reset
+    }
+  } catch {
+    showToast("Server error, try again later");
+    submitBtn.innerHTML = 'Login';
+  }
+});
+
+function showToast(msg) {
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000)}
+
+    </script>
+</body>
+</html>

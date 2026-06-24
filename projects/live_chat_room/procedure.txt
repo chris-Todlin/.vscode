@@ -1,0 +1,131 @@
+Here’s the **same checklist format**, but with **`[ ] Pending` / `[x] Done` boxes** so you can track progress.
+
+---
+
+# WebSocket Chat – Step Checklist
+
+## Backend (server) steps
+
+```
+[Done] Install dependencies
+    - install Express
+    - install ws
+
+[Done] Create an Express server
+
+[Done] Create an HTTP server from Express
+
+[Done] Attach a WebSocket server to the HTTP server
+
+[Done] Handle WebSocket connections
+    - when a client connects, a WebSocket object (ws) is created
+
+[ ] Wait for client login
+    - client sends userId
+
+[ ] Store connected users
+    - save userId + socket connection in an array
+
+[ ] Handle incoming messages
+    - read receiver
+    - find receiver in user list
+    - send message through receiver socket
+
+[ ] Handle disconnections
+    - remove user from the user list
+```
+
+---
+
+# Frontend (client) steps
+
+```
+[ ] Create a WebSocket connection to the server
+
+[ ] Send login message after connecting
+    - include userId
+
+[ ] Send chat messages
+    - include receiver
+    - include message text
+
+[ ] Listen for incoming messages from the server
+
+[ ] Display received messages in the chat UI
+```
+
+---
+
+# Message Structure
+
+Example message sent to server:
+
+```
+{
+ type: "message",
+ receiver: "bob",
+ message: "Hello"
+}
+```
+
+---
+
+# Identifying the Sender (Server Logic)
+
+Important rule:
+
+```
+Never trust the client for sender identity.
+```
+
+Instead store the **userId inside the socket**.
+
+Example:
+
+```javascript
+const users = [];
+
+wss.on("connection", (ws) => {
+
+  ws.on("message", (data) => {
+    const msg = JSON.parse(data);
+
+    // user login
+    if (msg.type === "login") {
+
+      ws.userId = msg.userId;
+
+      users.push({
+        userId: msg.userId,
+        socket: ws
+      });
+    }
+
+    // message sending
+    if (msg.type === "message") {
+
+      const receiver = users.find(u => u.userId === msg.receiver);
+
+      if (receiver) {
+        receiver.socket.send(JSON.stringify({
+          sender: ws.userId,
+          message: msg.message
+        }));
+      }
+
+    }
+
+  });
+
+});
+```
+
+Key idea:
+
+```
+sender = ws.userId
+```
+
+---
+
+If you'd like, I can also give you a **clean “phase roadmap” used by real chat apps** (Phase 1: messaging, Phase 2: rooms, Phase 3: persistence, Phase 4: scaling). It helps you build a **full WhatsApp-like backend step by step.**

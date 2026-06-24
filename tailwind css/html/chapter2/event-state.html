@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event and State</title>
+    <link rel="stylesheet" href="../../src/output.css">
+</head>
+<body class=" container p-4 flex flex-col gap-4 bg-gray-900 text-orange-500">
+    <button class="w-36 py-3 rounded bg-green-300 hover:bg-blue-400 active:bg-red-600 hover:text-white">Simple block</button>
+
+    <!-- Some Randomish shit -->
+    <div class="w-36 text-white">
+        <div class="first:font-bold last:italic my-1 p-2 odd:bg-green-500 even:bg-blue-500">one</div>
+        <div class="first:font-bold last:italic my-1 p-2 odd:bg-green-500 even:bg-blue-500" >two</div>
+        <div class="first:font-bold last:italic my-1 p-2 odd:bg-green-500 even:bg-blue-500">three</div>
+        <div class="first:font-bold last:italic my-1 p-2 odd:bg-green-500 even:bg-blue-500">four</div>
+    </div>
+
+    <!-- Required, invalid and disables -->
+    <div class="container">
+        <form action="/" class="form-control flex flex-6 flex-col" method="post">
+            <input type="text" name="user" id="user" class="my-1 required:bg-red-200" required>
+            <input type="text" name="user" id="user" class="my-1 disabled:bg-green-200" disabled>
+
+            <!-- Peer -->
+            <input type="email" name="email" id="email" class="peer">
+            <p class="mt-2 invisible text-sm peer-invalid:visible peer-invalid:text-red-600">Invalid</p>
+        </form>
+    </div>
+
+    <!-- Group -->
+    <div class="group w-24 p-5 bg-white">
+        <div class="bg-gray-100 group-hover:bg-green-500">Text1</div>
+        <div class="bg-gray-100 group-hover:bg-red-500">Text2</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<article class="container tab-pane active" id="weight">
+            <div class="header header-content">
+                <h2>Weight</h2>
+            </div>
+            <section class="py-2">
+                <form name="weight" action="/convertwieght" class="form-control">
+                    <div class="form-label d-flex flex-column">
+                        <label for="magnitude" class="form-label">Magnitude: </label>
+                        <input type="number" name="magnitude" id="magnitude" placeholder="10" min="0" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="from" class="form-label">From: </label>
+                        <%# Select for the value of the from to convert to  %>
+                        <select name="from" id="from" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="mg" class="option-text-width-control">Milligram</option>
+                            <option value="g" class="option-text-width-control">Grams</option>
+                            <option value="kg" class="option-text-width-control">Kilograms</option>
+                            <option value="t" class="option-text-width-control">Tonnes</option>
+                            <option value="lb" class="option-text-width-control">Pound</option>
+                            <option value="oz" class="option-text-width-control">Ounce</option>
+                        </select>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="to" class="form-label">To: </label>
+                        <%# Select for the value of the to to convert to  %>
+                        <select name="to" id="to" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="oz" class="option-text-width-control">Ounce</option>
+                            <option value="lb" class="option-text-width-control">Pound</option> 
+                            <option value="t" class="option-text-width-control">Tonnes</option>
+                            <option value="kg" class="option-text-width-control">Kilograms</option>
+                            <option value="g" class="option-text-width-control">Grams</option>
+                            <option value="mg" class="option-text-width-control">Milligram</option>
+                        </select>
+                    </div>
+                    <%# Button for the conversion of the results %>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Convert</button>
+                    </div>
+                </form>
+            </section>
+        </article>

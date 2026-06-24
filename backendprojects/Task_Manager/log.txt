@@ -1,0 +1,121 @@
+TASK MANAGER API AND BACKEND
+
+const passport = require("passport");
+const { Strategy: JwtStrategy, ExtractJwt } = require("passport-jwt");
+const User = require("./models/User");
+
+passport.use(new JwtStrategy({
+  jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+  secretOrKey: "your_jwt_secret"
+}, async (jwt_payload, done) => {
+  try {
+    const user = await User.findById(jwt_payload.id);
+    if (user) return done(null, user);
+    return done(null, false);
+  } catch (err) {
+    return done(err, false);
+  }
+}));
+
+
+- Create the package.json and add the details of the project.
+    -> name
+    -> Version 
+    -> Description 
+    -> private
+    -> scripts - start and tests
+    -> dependencies 
+    -> devDependencies 
+
+- User Managment
+    -> Sign up
+    -> Login 
+    ->  Log out
+    -> Session creation
+
+    #modules
+    npm install express express-session ejs passport passport-local mongoose morgan rotating-file-stream connect-flash bcrypt bootstrap cookie-parser --save
+    npm install mocha forever chai --save-dev 
+
+    # Create the main application ready for implant - app.js
+
+    # Adding the morgan for the logging to see the reactions 
+      Finishing with the rotating file server for the loggin saving
+    
+    # Create the route for the user or signup/login/logouts
+        - Create the folder "Routes"
+        - Create the userjs
+        - Add the router and the paths
+        -export our to the main applications
+        - Add the middleware folder
+        - Initiate the signup middleware
+
+        #done
+        - Create the log out and login 
+        - exported the router 
+    # Create the user model for db storage.
+        - create the model folder, user.js
+        - create the model 
+        - export it
+    # create the set the session and local strategy
+        - create the folder controller, setSession.js
+        - serialize the user
+        - deserialize the user. 
+        - create the login local strategy 
+
+    # Adding the session and mongodb in the main app
+
+    # Dealing with views on 404 500 login and signup form
+        - create the view folder and set them in
+        - set the view engine of the 
+        - bootstrap static
+        - 404 
+        - 500 
+        - login
+        - signup
+
+    # Last step (4/15/2026)
+        - set the route and test 
+        - set the infos div
+        - initialte the infos 
+
+Done by 11:50 am (4/15/2026)
+
+- Task Management
+    -> create task 
+    -> view all task / filter
+    -> update task  by ID
+    -> Delete task by ID
+
+    # create a new task 
+      - create a new model for the task
+      - now add the user via a router or path 
+      - task : title, description, category
+      - categories: general | work | hobby | parenting | school | personal
+      - Create the ejs form for that
+    
+    # Create the routes of the task 
+
+    # Read Tasks
+      -Return all for that user
+      - Filter by status 
+      - Retrievea single one by ID
+
+    # Writing the ejs for the task sand js for the DOM
+      - Writing the script for the onchange of the filter to change a lof of the things
+      - create the file and add it
+
+    # Modify the task 
+      - title, description or mark it as completed or pending 
+      - Create the edit page ejs
+
+      - Now the backend path to edit or update the task in the db
+      - Add a check button to mark it as complete in the case of the completer of not 
+      - Then update the completed in the db and render it diffrently
+
+    # Delete Task as the last resol the button would
+       be a link to give us much free soace for thinking since
+        if you delete you go back in the main window
+
+      - Create the delete router
+      - Make the button respond to ut

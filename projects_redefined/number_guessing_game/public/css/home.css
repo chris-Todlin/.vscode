@@ -1,0 +1,19 @@
+/* Our css for theones I want to write on my own */
+.home-about, .home-btn button {
+    font-size: 1.2rem;
+    color: maroon;
+    background: lightgray;
+}
+
+.home-about h2 {
+   color: Orange;
+   padding: 0.4rem;
+}
+
+.home-about p {
+    margin-left: 1rem;
+}
+
+.home-section{
+    font-size: 1.2rem;
+}

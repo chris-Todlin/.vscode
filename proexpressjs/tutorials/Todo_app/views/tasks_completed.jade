@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+    .menu 
+        h2 menu 
+
+        ul.nav.nav-pills 
+            li
+                a(href="/tasks") Home
+            li
+                a(href="/tasks/completed") Todo List
+            li.active
+                a(href="/tasks") Completed 
+h1 = title 
+
+.list 
+    if(ltasks.length === 0)
+        | No tasks. 
+    each task, index in tasks 
+        .item 
+            .num 
+                span = index + 1
+                    | &nbsp;
+            .name.completed-task 
+                span.name = task.name

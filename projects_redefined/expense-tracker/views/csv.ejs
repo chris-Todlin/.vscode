@@ -1,0 +1,18 @@
+<%- include('./partials/_header.ejs') %>
+<main class="container">
+    <form action="/expense/upload-csv" enctype="multipart/form-data" method="post" role="form" class="form-control was-validated max-w-4xl mb-4">
+        <div class="header ml-5 mb-4">
+            <h2>Add Expense - Csv File</h2>
+        </div>
+        <div class="form-control file mb-4">
+            <input type="file" name="csv_file" id="csv_file" class="form-control" accept=".csv" required>
+            <div class="valid-feedback">
+                <span class="bi bi-file-earmark-arrow-up bi-file-earmark-pdf-spreadsheet"></span>
+            </div>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+        </div>
+    </form>
+</main>
+<%- include('./partials/_footer.ejs') %>

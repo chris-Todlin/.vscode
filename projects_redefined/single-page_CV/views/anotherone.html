@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <title>BootStrap Comt ...</title>
+</head>
+<body>
+    <article class="container">
+        <!-- Everthing is under this one -->
+        <div class="nonething">
+            <button type="button" class="toggleMode btn btn-info mt-4">Change Mode</button>
+        </div>
+        
+        <section class="mt-2 mb-5">
+            <h2>Bootstrap 5 Collapse</h2>
+            <button class="btn btn-outline-primary" data-bs-toggle="collapse" data-bs-target="#demo">Collapse this content</button>
+            <div id="demo" class="collapse show bg-success ml-4 mt-4 rounded">
+                <h1>My First Bootstrap Page - container-fluid</h1>
+                <p>Tis is a trail page</p>
+            </div>
+        </section>
+
+        <!-- Accordion -->
+        <section id="accordion" class="mb-4">
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseOne" class="btn" data-bs-toggle="collapse">Collapsible Group Item #1</a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                    Lorem ipsum...
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseTwo" class="collapsed btn" data-bs-toggle="collapse">Collapsible Group Item #2</a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                    Lorem ipsum...
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a href="#collapseThree" class="collapsed btn" data-bs-toggle="collapse">Collapsible Group Item #1</a>
+                </div>
+                <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                    Lorem ipsum...
+                </div>
+            </div>
+        </section>
+
+        <section class="dropwow">
+            <!-- drop downs -->
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Dropdown Button</button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a href="#" class="dropdown-item">Link 1</a></li>
+                    <li><a href="#" class="dropdown-item">Link 2</a></li>
+                    <li><a href="#" class="dropdown-item">Link 3</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a href="#" class="dropdown-item active">Link 4</a></li>
+                    <li><a href="#" class="dropdown-item disabled">Link 5</a></li>
+                    <li><a href="#" class="dropdown-item">Link 6</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="d-flex bg-secondary">
+  <div class="p-2 ms-auto bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 bg-primary">Flex item 3</div>
+</div>
+<div class="d-flex bg-secondary">
+  <div class="p-2 bg-info">Flex item 1</div>
+  <div class="p-2 bg-warning">Flex item 2</div>
+  <div class="p-2 me-auto bg-primary">Flex item 3</div>
+</div>
+    </article>
+    <!-- <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const buttonToggle = document.querySelector(".toggleMode");
+        const bodyHtml = document.body;
+        let dark = true;
+
+        function toggleMode() {
+            if(dark){
+                bodyHtml.setAttribute("data-bs-theme","dark");
+                buttonToggle.textContent = "Dark Mode";
+                dark = false;
+            } else {
+                bodyHtml.setAttribute("data-bs-theme","light");
+                buttonToggle.textContent = "Light Mode";
+                dark = true;
+            }
+
+        }
+
+        buttonToggle.addEventListener("click", toggleMode);
+    </script>
+</body>
+</html>

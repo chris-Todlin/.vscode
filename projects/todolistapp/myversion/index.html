@@ -1,0 +1,37 @@
+<!-- This is the HTMl file for the To Do List application, web version we are going to develop -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List App | My Version</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- Place a header to give it more semantics -->
+        <h1>To-Do List App</h1>
+    </header>
+    <main>
+        <!-- Section for the to do list application -->
+        <article id="todoapp">
+            <section class="user-input">
+                <!-- Place for the user input and button -->
+                <label>
+                    <input type="text" name="userInput" id="taskInput" placeholder="Todo...">
+                </label>
+                <button id="add-btn">Add</button>
+            </section>
+
+            <!-- A place to keep our list for the user -->
+            <ul id="todo_list">
+                <!-- <li>Eat</li> -->
+            </ul>
+        </article>
+    </main>
+
+    <!-- Javascript Inlude -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<%# This is the 404 error path of the server %>
+<%- include('./partials/header.ejs') %>
+    <%# Section to greet the user %>
+    <section class="greet">
+        <p>Welcome, <%= currentUser.getUsername() %></p>
+    </section>
+
+    <%# Section for the view part of the tasks %>
+    <section class="viewTasks">
+        <div class="card mb-2">
+            <div class="card-header">
+                <h2>Tasks</h2>
+            </div>
+        </div>
+        <ul class="group-list d-flex flex-column gap-3 p-4" id="tasksList">
+            <li class="list-item card">
+                <span class="card-body">Eat</span>
+                <div class="card-footer d-flex align-items-center justify-content-end">
+                    <button class="menu-btn">⋮</button>
+                    <ul class="menu">
+                        <li>Edit</li>
+                        <li>Delete</li>
+                        <li>Share</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="list-item card">
+                <span class="card-body">Eat</span>
+                <div class="card-footer d-flex align-items-center justify-content-end">
+                    <button class="menu-btn">⋮</button>
+                    <ul class="menu">
+                        <li>Edit</li>
+                        <li>Delete</li>
+                        <li>Share</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="overla">
+        <div class="spi">
+            <span class="spinner spinner-border"></span>
+        </div>
+        <div class="moda">
+            <div class="head">
+                <h2 class="text-center"></h2>
+                <button class="btn-close closeBtn"></button>
+            </div>
+            <form name="form" id="form" action="/" class="form-control" method="post">
+                <div class="form-control">
+                    <label for="title" class="form-label">Title:</label>
+                    <input type="text" name="title" id="title" class="form-control" placeholder="title" required>
+                </div>
+                <div class="form-control">
+                    <label for="category" class="form-label">Category:</label>
+                    <select name="category" id="category" class="form-select">
+                        <option value="work">Work</option>
+                        <option value="personal">Personal</option>
+                    </select>
+                </div>
+                <div class="form-control">
+                    <label for="description" class="form-label">Task Description:</label>
+                    <textarea name="description" id="description" cols="30" class="form-control" rows="10" placeholder="Task description ..." required></textarea>
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary"></button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <%# Section of the button to toggle the visibility of the form %>
+    <div class="button">
+        <button id="addBtn" class="btn btn-primary rounded-2xl">
+            <h2>+</h2>
+        </button>
+    </div>
+
+    <%# The toast for the messages %>
+    <div class="mess" id="toast">
+        <span id="message"></span>
+        <button class="btn-close btn-close-me"></button>
+    </div>
+    <%# dding a script file %>
+    <script src="/js/index.js"></script>
+<%- include('./partials/footer.ejs') %>

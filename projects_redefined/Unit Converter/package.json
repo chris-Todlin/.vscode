@@ -1,0 +1,29 @@
+{
+    "name": "unit-converter",
+    "version": "1.0.0",
+    "private": true,
+    "description": "A platform to practice express application",
+    "scripts": {
+        "test": "mocha",
+        "start": "node app"
+    },
+    "main": "index.js",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "dependencies": {
+        "bootstrap": "^5.3.8",
+        "cookie-parser": "^1.4.7",
+        "ejs": "^5.0.1",
+        "express": "^5.2.1",
+        "express-session": "^1.19.0",
+        "morgan": "^1.10.1",
+        "rotating-file-stream": "^3.2.9",
+        "session-file-store": "^1.5.0"
+    },
+    "devDependencies": {
+        "chai": "^6.2.2",
+        "mocha": "^11.7.5"
+    }
+}

@@ -1,0 +1,20 @@
+<div class="cart">
+    <div class="meddage">
+        <h2>Your Products</h2>
+        <p>These are the products you selected.</p>
+    </div>
+    {{#if cartproducts.length}}
+            {{#each cartproducts}}
+                <setion class="cartproduct" id="{{id}}">
+                    <h3>{{name}}</h3>
+                    <p id="price"><b>Price</b> : {{price}}</p>
+                    <button id="pay">Pay</button>
+                </setion>
+            {{/each}}
+    {{else}}
+            <section class="noproduct">
+                <h2>Sorry, you have no product added to cart.</h2>
+                <p><a href="/products">Click here</a> to add product to cart.</p>
+            </section>
+    {{/if}}
+</div>

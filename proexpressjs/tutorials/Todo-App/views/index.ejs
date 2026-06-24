@@ -1,0 +1,27 @@
+<%# This is the amin file with alll the components
+    - add 
+    - list 
+    - completed
+    - deleted
+%>
+<%- include('./partials/_header.ejs') %>
+    <%# Add form or place %>
+    <section class="shadow py-2 p-4 text-center">
+        <h2>Add Todo</h2>
+        <form name="add" action="/" method="post" class="form d-flex flex-row btn-group">
+            <input type="hidden" name="_csrf" id="_csurf" value="<%= _csurf %>">
+            <input type="text" name="name" id="name" placeholder="Todo ..." class="form-control group-item" required autocomplete="on" autofocus>
+            <button class="btn btn-success group-item" type="submit">Add</button>
+        </form>
+    </section>
+
+    <%# Section for the list %>
+    <section class="shadow py-2 p-4 text-center" style="box-shadow: 4px 1px 4px rgba(123,23,43,0.1);">
+        <h2>Todos</h2>
+        <ul id="todo" class="list-group text-center d-flex flex-column gap-4 mt-2">
+        </ul>
+    </section>
+
+    <%# Add teh js %>
+    <script src="/js/add.js"></script>
+<%- include('./partials/f_footer.ejs') %>

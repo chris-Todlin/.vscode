@@ -1,0 +1,23 @@
+<%# Form for adding the task %>
+<section class="container py-4">
+    <% if (task) { %>
+        <h2 class="text-center">Edit Task</h2>
+        <form name="edit" action="/edittask" class="form-control" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="hidden">
+            <input type="hidden" class=" form-control hidden-input" value="<%= task._id %>" name="id">
+        </div>
+        <div class="d-grid gap-2">
+            <input type="text" name="todo" id="todo" value="<%= task.todo %>" class="form-control" autofocus required>
+            <button class="btn btn-primary" type="submit">Add Task</button>
+        </div>
+    </form>
+    <% } else { %>
+        <h2 class="text-center">Add Task</h2>
+        <form name="todo" action="/addtask" class="form-control" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="d-grid gap-2">
+            <input type="text" name="todo" id="todo" placeholder="visit grandma" class="form-control" autofocus required>
+            <button class="btn btn-primary" type="submit">Add Task</button>
+        </div>
+    </form>
+    <% } %>
+</section>

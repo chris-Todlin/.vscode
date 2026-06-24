@@ -1,0 +1,19 @@
+{
+    "name": "single page Cv",
+    "private": true,
+    "version": "1.0.0",
+    "Description": "A single page CV for learning",
+    "author": "Mwakai Mwadime",
+    "scripts": {
+        "start": "node app"
+    },
+    "dependencies": {
+        "bootstrap": "^5.3.8",
+        "ejs": "^5.0.1",
+        "express": "^5.2.1",
+        "express-session": "^1.19.0",
+        "morgan": "^1.10.1",
+        "rotating-file-stream": "^3.2.9",
+        "session-file-store": "^1.5.0"
+    }
+}

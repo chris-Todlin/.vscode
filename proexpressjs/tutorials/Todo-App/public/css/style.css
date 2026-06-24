@@ -1,0 +1,57 @@
+/* For the form to do */
+#addTodo, #renderSect {
+    background: linear-gradient(180deg, #dbd1d1, #e2d1d1);
+    border-radius: 1rem;
+    color: #d49a4f;
+    text-shadow: 1px 1.5px rgba(23,34,12,0.1);
+}
+
+#addTodo form {
+    margin-bottom: 1rem;
+}
+
+/* This is for the message one */
+.alert {
+    color: whitesmoke;
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.success {
+    background: linear-gradient(90deg, green, green);
+}
+
+.error {
+    background: linear-gradient(90deg, #b82d2d, #943e3e);
+}
+
+.hide {
+    /* Hode the whole button and the parent element */
+    display: none;
+}
+
+/* Todos secton of rendering , all style here */
+#renderSect h2 {
+    border-bottom: 2px solid goldenrod;
+    margin-bottom: 0.5rem;
+}
+
+ul#todo {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin-bottom: 1rem;
+}
+
+#todo li{
+    color: maroon;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5rem;
+    background-color: wheat;
+    border-radius: 0.3rem;
+}

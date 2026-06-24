@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <link rel="stylesheet" href="css/rentcar.css">
+</head>
+<body>
+    <header>
+        <h1>Car Rental Services</h1>
+    </header>
+    <section class="bookform">
+        <h2>Book a car</h2>
+        <form name="book" action="/rentcars/bookcar" role="form" method="post">
+            <div class="form">
+                <label for="carName">Select a Car:</label>
+                <div class="input">
+                    <select name="car" id="carName" required></select>
+                </div>
+            </div>
+            <div class="form">
+                <label for="pickDate">Pickup Date:</label>
+                <div class="input">
+                    <input type="date" name="pickdate" id="pickDate" required>
+                </div>
+            </div>
+            <div class="form">
+                <label for="returnDate">Return Date:</label>
+                <div class="input">
+                    <input type="date" name="returndate" id="returnDate" required></input>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit">Book Now</button>
+            </div>
+        </form>
+    </section>
+    <h2 class="h2">Cars for Rent</h2>
+    <section class="carlist">
+        <!-- Handled by js -->
+    </section>
+
+    <script src="js/rentcar.js"></script>
+</body>
+</html>

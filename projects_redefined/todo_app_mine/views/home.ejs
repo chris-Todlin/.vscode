@@ -1,0 +1,36 @@
+<%# This is the 404 error path of the server %>
+<%- include('./partials/header.ejs') %>
+    <%# Section on the useage of the app or the necessar file to be added %>
+    <section id="#about">
+        <h2>About</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos beatae ut nostrum saepe recusandae neque vero repudiandae tenetur sit molestiae. Quis, possimus officia. Molestias maiores ullam dolor. Deserunt, dignissimos alias?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis cum fuga pariatur voluptas adipisci! Odio sapiente rerum, ut facere quis minima sed labore, quisquam temporibus nesciunt culpa. Deleniti, illum labore.
+        </p>
+    </section>
+
+    <% if (!currentUser) { %>
+        <section id="started">
+            <h2>Get Started</h2>
+            <div class="grid">
+                <a href="/signin" class="btn btn-primary">Get Started</a>
+                <a href="/login" class="btn btn-primary">Login</a>
+            </div>
+        </section>
+    <% } %>
+
+    <section id="prod">
+        <h2>Information</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla fuga quia nemo incidunt ab quisquam laboriosam, fugit excepturi et beatae est explicabo dolores iusto voluptates eius cum accusantium aperiam. Possimus.
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla fuga quia nemo incidunt ab quisquam laboriosam, fugit excepturi et beatae est explicabo dolores iusto voluptates eius cum accusantium aperiam. Possimus.
+        </p>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla fuga quia nemo incidunt ab quisquam laboriosam, fugit excepturi et beatae est explicabo dolores iusto voluptates eius cum accusantium aperiam. Possimus.
+        </p>
+    </section>
+<%- include('./partials/footer.ejs') %>

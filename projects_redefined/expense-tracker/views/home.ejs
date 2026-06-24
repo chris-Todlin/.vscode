@@ -1,0 +1,44 @@
+<%- include('./partials/_header.ejs') %>
+    <main class="container d-flex flex-column gap-4 mb-4">
+        <section class="py-2 bg-info p-2 text-shadow-2xs text-dark rounded">
+            <!-- Intro -->
+            <h2 class="title">Welcome to Expense Tracker</h2>
+            <p>
+                This is a specialized application on the web to help you manage your expenses.
+                To get personolized service follow, contact us for more.
+            </p>
+        </section>
+
+        <section class="card">
+            <!-- Usage -->
+            <h2 class="card-header">Usage</h2>
+            <div class="card-body">
+                <p class="title font-extrabold">
+                    To use this application follow the following steps:
+                </p>
+                <ol class="list-group list-group-numbered">
+                    <li class="list-group-item list-group-item-action">Sign in/ Log in</li>
+                    <li class="list-group-item list-group-item-action">Add the expense</li>
+                    <li class="list-group-item list-group-item-action">View previous expense if there are there.</li>
+                    <li class="list-group-item list-group-item-action">Edit them</li>
+                    <li class="list-group-item list-group-item-action">Delete them</li>
+                    <li class="list-group-item list-group-item-action">An many more to come ...</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="card">
+            <!-- Features -->
+            <h2 class="card-header text-info-emphasis">Features</h2>
+            <div class="card-body">
+                <ul class="list-group">
+                <li class="list-group-item">Personalized expenses <sup class="badge bg-success">New</sup></li>
+                <li class="list-group-item">Strong security <sup class="badge bg-success">New</sup></li>
+                <li class="list-group-item">Export and import via csv <sup class="badge bg-warning">Future</sup></li>
+                <li class="list-group-item">Categories <sup class="badge bg-info">To come</sup></li>
+                <li class="list-group-item">Alerts <sup class="badge bg-info">To come</sup></li>
+            </ul>
+            </div>
+        </section>
+    </main>
+<%- include('./partials/_footer.ejs') %>

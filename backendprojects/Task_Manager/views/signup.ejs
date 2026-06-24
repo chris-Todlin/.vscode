@@ -1,0 +1,26 @@
+<%# Signup form %>
+<%- include('./partials/_header.ejs') %>
+<section class="d-flex justify-content-center align-items-center" style="block-size: calc(100vh  - 120px);">
+    <div class="d-flex flex-column w-2xl justify-content-center p-4 rounded align-items-center">
+        <%# From form the login %>
+        <form action="/signup" class="form-group form-control" method="post" style="min-width: 42rem;">
+            <div class="form-text text-center">
+                <h2>Sign Up</h2>
+            </div>
+            <div class="mb-2">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" name="username" id="username" class="form-control" placeholder="Username" required autofocus>
+            </div>
+
+            <div class="mb-2">
+                <label for="password" class="form-label">Password:</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Signup</button>
+            </div>
+        </form>
+    </div>
+</section>
+<%- include('./partials/_footer.ejs') %>

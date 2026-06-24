@@ -1,0 +1,28 @@
+<!-- footer -->
+        <footer class="footer text-center container-fluid bg-dark text-light py-2">
+            <p>Copyright &copy; Expense Tracker, 2025</p>
+        </footer>
+    </div>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const toggleBtn = document.getElementById("toggleTheme");
+        let state = true; // dark mode active
+        const containerEl = document.body;
+
+        function toggleTheme(){
+            if(state){
+                containerEl.setAttribute("data-bs-theme","dark");
+                toggleBtn.textContent = "Light Mode";
+                state = false;
+            } else {
+                containerEl.setAttribute("data-bs-theme","light");
+                toggleBtn.textContent = "Dark Mode";
+                state = true;
+            }
+        }
+
+        toggleBtn.addEventListener("click",toggleTheme);
+    </script>
+</body>
+</html>

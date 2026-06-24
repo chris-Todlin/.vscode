@@ -1,0 +1,41 @@
+{
+  "name": "book_lib_api_redefined",
+  "version": "1.0.0",
+  "description": "A book and a task API at the same time",
+  "keywords": [
+    "Task",
+    "book",
+    "API"
+  ],
+  "license": "ISC",
+  "author": "Mwakai Mwadime Chrispin",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bootstrap": "^5.3.8",
+    "compression": "^1.8.1",
+    "connect-flash": "^0.1.1",
+    "consolidate": "^1.0.4",
+    "cookie-parser": "^1.4.7",
+    "csurf": "^1.11.0",
+    "dotenv": "^17.4.2",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "helmet": "^8.1.0",
+    "mongoose": "^9.6.0",
+    "morgan": "^1.10.1",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "rotating-file-stream": "^3.2.9"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5"
+  }
+}

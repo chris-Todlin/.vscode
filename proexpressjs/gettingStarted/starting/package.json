@@ -1,0 +1,25 @@
+{
+    "name": "starting-express",
+    "version": "1.0.0",
+    "description": "Starting Express JS",
+    "license": "ISC",
+    "author": "Pro Express JS",
+    "type": "commonjs",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "compression": "^1.8.1",
+        "connect-redis": "^9.0.0",
+        "dotenv": "^17.4.2",
+        "ejs": "^5.0.2",
+        "express": "^5.2.1",
+        "express-session": "^1.19.0",
+        "mongoskin": "^2.1.0"
+    },
+    "devDependencies": {
+        "chai": "^6.2.2",
+        "mocha": "^11.7.5"
+    }
+}

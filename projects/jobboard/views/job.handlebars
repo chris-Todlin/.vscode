@@ -1,0 +1,26 @@
+<h2>A Job Platform</h2>
+
+<form name="job" action="/addjob" method="post" enctype="application/x-www-form-urlencoded">
+    <div class="inputs">
+        <label for="title">Job Title:</label>
+        <input type="text" name="title" id="title" required>
+    </div>
+
+    <div class="inputs">
+        <label for="description">Job Description:</label>
+        <input type="text" name="description" id="description" required>
+    </div>
+
+    <div class="btn">
+        <button type="submit">Post Job</button>
+    </div>
+</form>
+
+{{!-- Place for rendering the jobs --}}
+<section class="jobs" id="jobs">
+    {{!-- Jobs are going to be rendered here --}}
+    <div class="job">
+        <h3>Title</h3>
+        <p>Description</p>
+    </div>
+</section>

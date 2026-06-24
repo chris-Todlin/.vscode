@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+    <link rel="stylesheet" href="css/post.css">
+    <link rel="shortcut icon" href="icon/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <!-- Form for the login in -->
+        <form name="post" class="post" action="/post" method="post">
+            <h1>Post Content</h1>
+            <div class="error invisible">
+            </div>
+            <input type="hidden" name="username" value="" id="nameuser">
+            <div class="inputs">
+                <label for="name">Title: </label>
+                <input type="text" name="title" id="name" required>
+            </div>
+            <div class="inputs">
+                <label for="content">Content: </label>
+                <textarea name="postcontent" id="content" cols="30" rows="10" required></textarea>
+            </div>
+            <div class="button">
+                <button type="submit">Post</button>
+            </div>
+        </form>
+    </div>
+    <script src="js/post.js"></script>
+</body>
+</html>

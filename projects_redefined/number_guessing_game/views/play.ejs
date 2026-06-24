@@ -1,0 +1,17 @@
+<%- include('./partials/_header.ejs') %>
+    <%# Section for the form used to sign up %>
+    <form action="/login" class="form-control" method="post">
+        <div class="header text-centers">
+            <h2>Play Game</h2>
+        </div>
+        <div class="hidden">
+            <input type="hidden" name="level" id="level" class="hidden">
+        </div>
+        <div class="input">
+            <input type="number" name="guess" id="guess" class="form-control" placeholder="Enter your guess ..." autofocus required>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" type="submit">Spin</button>
+        </div>
+    </form>
+<%- include('./partials/_footer.ejs') %>

@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(80rad, gray, gray,grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    color:maroon;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+main {
+    padding: 1rem;
+    box-shadow: 1px 2px 4px rgba(12,1,2,0.2);
+    border-radius: 0.4rem;
+    background-color: antiquewhite;
+    max-width: 800px;
+}
+
+input {
+    font-size: 1.2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 0.4rem 0.8em;
+    border-radius: 0.4rem;
+    outline: 2px solid maroon;
+    border: none;
+}
+
+.output{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.view {
+    padding: 0.5rem;
+    border-radius: 0.3em;
+    font-size: 1.1em;
+    color: crimson;
+    text-shadow: 1px 2px 3px rgba(12,1,2,0.2);
+}
+
+.kilograms{background-color: gold;}
+.grams{background-color: bisque;}
+.ounces{background-color: #cea480;}
+
+/* For the message or feedback */
+.message {
+    position: absolute;
+    position: fixed;
+    z-index: 999;
+    bottom: 0;
+    align-self: self-end;
+    right: 0;
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: maroon;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 0.4em;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-right: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.animate_message {
+    animation: pushback ease-out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+/* animating the message */
+@keyframes pushback {
+    0%{
+        transform: translateX(0);
+    }
+    50%{
+        transform: translateX(-50%);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+}
+
+button{
+    border-radius: 2.5rem;
+    background-color: maroon;
+    font-size: 1.2rem;
+    padding: 0.2rem 0.4rem;
+    border: none;
+    outline: none;
+    color: white;
+}

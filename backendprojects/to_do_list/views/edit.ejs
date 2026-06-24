@@ -1,0 +1,18 @@
+<%- include('./partials/_header.ejs') %>
+<%# Form for editing the task %>
+<section class="container py-4">  
+    <h2 class="text-center">Add Todo</h2>
+    <form name="edittask" action="/edittask" class="form-control" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="hidden">
+            <input type="hidden" class=" form-control hidden-input" value="<%= task._id %>" name="id">
+        </div>
+        <div class="gap-2">
+            <label for="todo" class="form-label">Todo</label>
+            <input type="text" name="todo" id="todo" value="<%= task.todo %>" class="form-control" autofocus required>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" type="submit">Edit Todo</button>
+        </div>
+    </form>
+</section>
+<%- include('./partials/_footer.ejs') %>

@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.3rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: goldenrod;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    block-size: 100vh;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 1px 1px 3px 6px rgba(56,32,12,0.3);
+    width: 60vw;
+    max-width: 700px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    gap: 0.5rem;
+}
+
+form h1 { text-align: center; color:chocolate; margin-bottom: 0.5rem;}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {font-size: 1.4em;}
+
+input {
+    font-size: 1.2em;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.3rem;
+    border: none;
+    outline: solid 2px black;
+}
+
+.error {
+    padding: 1rem;
+    background-color: maroon;
+    color: whitesmoke;
+    border-radius: 0.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.invisible {
+    display: none;
+}
+
+input:active, input:hover {
+    outline: solid 2px lightgreen;
+    border: none;
+}
+
+.button{
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    font-size: 1.2em;
+    background-color: yellow;
+    padding: 0.4rem 1rem;
+    border: yellow solid 1px;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    color: brown;
+    width: 100%;
+}
+
+button:hover {
+    background-color: goldenrod;
+}

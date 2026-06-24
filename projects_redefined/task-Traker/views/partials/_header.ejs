@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        body {
+            font-size: 1.4rem;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30%;
+        }
+    </style>
+</head>
+<body class="bg-light-subtle">
+    <div>
+        <header class="container-fluid flex justify-between header p-4 row bg-dark text-bg-dark">
+        <h1 class="font-extrabold col text-shadow-amber-500">Task Tracker</h1>
+
+        <nav class="navbar col align-content-center navbar-dark text-dark-emphasis navbar-expand-lg">
+            <section class="nav align-content-center flex-row navbar-nav gap-4">
+                <% if (currentUser) { %>
+                    <div class=" flex-col nav-item">
+                        Hello, <%= currentUser.name() %>
+                    </div>
+                    <div class="nav-item flex-col">
+                        <a href="/logout" class="nav-link">Log Out</a>
+                    </div>
+                <% } else { %>
+                    <div class="nav-item flex-col">
+                        <a href="/login" class="nav-link">Log In</a>
+                    </div>
+                    <div class="nav-item flex-col">
+                        <a href="/signup" class="nav-link">Sign Up</a>
+                    </div>
+                <% } %>
+            </section>
+        </nav>
+    </header>
+    <% if (errors && errors.length) { %>
+        <div class="container mt-4">
+            <% errors.forEach(err => { %>
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                    <%= err %>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+
+    <% if (infos && infos.length) { %>
+        <div class="container mt-4">
+            <% infos.forEach(info => { %>
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <%= info %>
+                </div>
+            <% }) %>
+        </div>
+    <% } %>
+    <main>

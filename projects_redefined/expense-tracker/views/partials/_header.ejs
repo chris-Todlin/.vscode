@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        @import url("../../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+    </style>
+</head>
+<body>
+    <div id="container">
+        <%# For the expense %>
+        <header class="container-fluid mb-3 d-flex align-items-center justify-content-between flex-row py-3 bg-dark text-light">
+            <h1>Expense Tracker</h1>
+            <nav class="navbar navbar-expand">
+                <!-- If the current use exists -->
+                <button type="button" class="btn text-light" id="toggleTheme">Dark Mode</button>
+                <% if (currentUser) { %>
+                    <div><a class="btn btn-dark text-light nav-item" href="/expense/addexpense" role="button">Add Expense</a></div>
+                    <div><a class="btn btn-dark text-light nav-item" href="/logout" role="button">Log Out</a></div>
+                <% } else { %>
+                    <div><a class="btn btn-dark text-light nav-item" href="/signup" role="button">Sign Up</a></div>
+                    <div><a class="btn btn-dark text-light nav-item" href="/login" role="button">Log In</a></div>
+                <% } %>
+            </nav>
+        </header>
+
+        <!-- Area for the installation of the errors -->
+        <div class="area">
+            <%# Area to get the errors infos out of here %>
+            <% if (errors && errors.length) { %>
+                <div class="container mt-4">
+                    <% errors.forEach(err => { %>
+                        <div class="alert alert-danger alert-dismissible"  role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <%= err %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+
+            <% if (infos && infos.length) { %>
+                <div class="container mt-4">
+                    <% infos.forEach(info => { %>
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            <%= info %>
+                        </div>
+                    <% }) %>
+                </div>
+            <% } %>
+        </div>
+
+        <!-- Greeting section -->
+        <% if (currentUser) { %>
+            <div class="mb-4 badge bg-dark text-light">
+                <h2>Welcome, <%= currentUser.name() %></h2>
+            </div>
+        <% } %>

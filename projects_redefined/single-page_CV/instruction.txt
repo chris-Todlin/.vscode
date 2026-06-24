@@ -1,0 +1,50 @@
+Single Page CV
+
+        Structure
+
+        Name 
+        title 
+        detial on adress phone an email 
+
+        skills 
+
+        Education 
+
+        Experience
+
+1. This is going to be the first page when the user visits
+2. No need for login or sign up
+3. Session is store to the user 
+4. loggin mechanism
+
+Third Part Module 
+
+ -> Express
+ -> Express Session
+ -> ejs
+ -> session-file-store
+ -> morgan
+ -> rotating file system
+ -> Bootstrap
+
+ npm install express express-session ejs morgan session-file-store rotating-file-store bootstrap --save
+
+File Structure
+
+log
+views
+public - css and js
+node_modules 
+app.js 
+package.json 
+package.json-lock 
+session 
+ignore.nodemon
+files.gitignore
+
+- Set up the server 
+-> Deal with the morgan and store
+-> Deal with session details
+-> Deail with CV
+-> Deal with bootstrap stling 
+-> Deal with error and internal error 

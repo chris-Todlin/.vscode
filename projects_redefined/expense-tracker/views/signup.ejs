@@ -1,0 +1,20 @@
+<%- include('./partials/_header.ejs') %>
+<main class="container" style="display: flex;align-items:center;justify-content:center;block-size: 83vh;">
+    <form action="/signup" method="post" role="form" class="bg-secondary-subtle py-4 form-control rounded was-validated" style="max-width: 700px;">
+        <div class="header text-center mb-4">
+            <h2>Sign In</h2>
+        </div>
+        <div class="mb-4">
+            <input type="text" name="username" id="username" class="form-control" placeholder="username" required autofocus>
+            <div class="invalid-feedback">Please enter your username</div>
+        </div>
+        <div class="mb-4">
+            <input type="password" name="password" class="form-control" id="password" placeholder="password" required>
+            <div class="invalid-feedback">Please enter your password</div>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+    </form>
+</main>
+<%- include('./partials/_footer.ejs') %>

@@ -1,0 +1,48 @@
+<%- include('./partials/_header.ejs') %>
+<main class="container">
+    <section class="file">
+        <a href="/expense/upload-csv" class="btn btn-primary">Import csv expense file</a>
+    </section>
+    <section class="section">
+        <%# The summary with the total %>
+        <% if (total) { %>
+            <section class="summary">
+                <h2>Summary</h2>
+
+                <p class="text-bg-info">
+                    <span class="bold">Total : Ksh.</span>
+                    <span class="text"><%= total %></span>
+                </p>
+            </section>
+        <% } %>
+
+        <%# If there are task render if not then don't %>
+        <% if (expenses.length) { %>
+            <div class="expense">
+                <h2>Expenses</h2>
+                <% expenses.forEach(el => { %>
+                    <section class="list row">
+                        <span class="col"><%= el.description %></span>
+                        <span class="col"> -Ksh.<%= el.amount %></span>
+                        <span class="col"><a class="btn btn-info" href="/expense/edit/<%= el._id %>" role="button">Edit</a></span>
+                        <span class="col"><a class="btn btn-danger" href="/expense/delete/<%= el._id %>" role="button">Delete</a></span>
+                    </section>
+                <% }) %>
+            </div>
+            <section class="file">
+                <a href="/expense/download-expenses/<%= id %>" class="btn btn-primary">Export csv expense file</a>
+            </section>
+        <% } else { %>
+            <div class="info">
+                <section class="text-info">
+                    <p class="message">
+                        Sorry, there are no expense till now.
+                    </p>
+
+                    <a class="btn btn-primary" href="/expense/addexpense" role="button">Add Task</a>
+                </section>
+            </div>
+        <% } %>
+    </section>
+</main>
+<%- include('./partials/_footer.ejs') %>

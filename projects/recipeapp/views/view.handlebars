@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{recipe.title}}</title>
+    <link rel="stylesheet" href="../../css/recipe.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{recipe.title}}</h1>
+        </header>
+        <div class="clickview">
+            <section class="recipe">
+                <img src="../../img/poster.png" alt="poster">
+
+                {{!-- REqirements --}}
+                <h2>Requirements</h2>
+                <ol>
+                    {{#each recipe.requirements}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                </ol>
+                <p>
+                    <strong>Description</strong>
+                    {{recipe.description}}
+                </p>
+                <h2>Procedure</h2>
+                <ul>
+                    {{#each recipe.procedure}}
+                        <li>{{.}}</li>
+                    {{/each}}
+                </ul>
+                <button>Back</button>
+            </section>
+        </div>
+    </div>
+    <script>
+        document.querySelector('button').addEventListener('click', (e)=>{
+            location.href = "/hbsversion";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<div class="error invisible"><!-- Error display part -->
+</div>
+<main>
+        {{#if products}}
+            {{#each products}}
+                <setion class="product" id="{{id}}">
+                    <img src="{{imgpath}}" alt="{{name}} poster">
+                    <h2>{{name}}</h2>
+                    <p id="price"><b>Price</b> : <span>{{price}}</span></p>
+                    <button class="addcart">Add to Cart</button>
+                </setion>
+            {{/each}}
+        {{else}}
+            <section class="noproduct">
+                <h2>Sorry, there are no products in store.</h2>
+                <p>Comeback later to view then, the system is under maintainance.</p>
+            </section>
+        {{/if}}
+</main>
+
+<script src="js/addtocart.js"></script>

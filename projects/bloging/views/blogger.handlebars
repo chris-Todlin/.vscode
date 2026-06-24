@@ -1,0 +1,33 @@
+<div class="container">
+    {{!-- Foorm for handling the creating of new blog --}}
+    <form class="create" name="blog" action="/publishblog" method="post" style="display: none;">
+        <h2>Create New Blog</h2>
+        <input type="hidden" name="username" value="{{name}}">
+
+        {{!-- Inout for the title --}}
+        <input type="text" name="title" id="titleBl" placeholder="Death in pending" required>
+
+        {{!-- Label for the contelnt --}}
+        <textarea name="content" id="contentBl" cols="30" rows="10" placeholder="It was like..." required></textarea>
+
+        <button type="submit">Publish</button>
+    </form>
+    {{!-- Section for the list of blogs under the name of the user --}}
+    {{#if blogs}}
+    
+    {{else}}
+        <section class="list">
+            <h2>No blogs under you</h2>
+            <button id="btn">Add new</button>
+        </section>
+    {{/if}}
+</div>
+
+<script>
+    function revealForm(){
+        document.querySelector('.create').style.display = "flex";
+        document.querySelector('.list').style.display = "none";
+    }
+    document.querySelector('#btn').addEventListener('click', revealForm);
+
+</script>

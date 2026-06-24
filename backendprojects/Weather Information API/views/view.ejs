@@ -1,0 +1,19 @@
+<%- include('./partials/_header.ejs') %>
+<%# For the view of the form and the render section %>
+    <section class="mt-3 mb-4 text-center">
+        <h2>Weather Search</h2>
+        <form action="/getweather" name="weather" class="form-control mt-1 d-flex btn-group">
+            <input type="text" name="city" id="city" class="form-control" placeholder="city eg Nairobi" required autofocus>
+            <button type="submit" class="btn-primary btn">Search</button>
+        </form>
+    </section>
+
+    <!-- Section to render the results -->
+    <section class="render">
+        <h2>Results</h2>
+        <div id="div" class="output d-grid align-items-center flex-column  justify-content-center form-control py-4">
+            No city searched
+        </div>
+    </section>
+    <script src="/js/weather.js"></script>
+<%- include('./partials/_footer.ejs') %>

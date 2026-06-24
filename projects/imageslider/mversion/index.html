@@ -1,0 +1,33 @@
+<!-- An image viewing application -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        button:disabled {
+            display: none;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article class="container">
+            <div class="foc">
+                <!-- The backwards button -->
+                <button class="navigation-btn" id="back"><img src="./svg/icons8-back-48.png"></button>
+                <div class="imageholder">
+                    <img id="image" src="./images/aleksandr-zaitsev-cRS3WCABL18-unsplash.jpg" alt="image">
+                </div>
+                <button class="navigation-btn"  id="forward"><img src="./svg/icons8-forward-48.png"></button>
+            </div>
+        </article>
+    </main>
+
+    <!-- Script files -->
+    <script src="script.js"></script>
+</body>
+</html>

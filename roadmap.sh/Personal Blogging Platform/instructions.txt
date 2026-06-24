@@ -1,0 +1,128 @@
+# This a  the instruction on doing the project below
+
+PERSONAL BLOGGING PLATFORM API
+
+Wo wil use it: admin, reader or authors
+
+# Skills 
+
+- CRUD
+- RESTFUL API
+
+# Technologies used
+- Express 
+- Database 
+- Server-side 
+
+# Purpose || STeps 
+- Return a list of all articles. Can add the filtering by date or tags - done now
+- Return a single article by Id - done too
+- Create a new article to be published - Done with you my dear
+- Delete a single article by ID - Done that already
+- Update a single article by Id - Done that already
+
+# STEP 2
+- Rewrite all of them with sqlite db, goodluck on thats
+- Both are going to store that in teh literal and see the perfomace ad also teh metric you give thems
+
+# Objectives
+- CRUD operation on the blog 
+- Provide the endpoint for the authentication
+- Allow for comments and like on the post 
+- Support the categories and tags for organization 
+- Ensure secure acess usign tokens 
+- Offer pagination and filtering for efficient data retrieval 
+- Scalability 
+
+# REquirements 
+
+1. User 
+    - Register 
+    - Authenticate 
+    - Manage user profiles 
+2. Post 
+    - CRUD 
+    - Upload images 
+    - Retieve post 
+3. Comment System 
+    - Add, edit, delete comments 
+    - Retieve comments for a post 
+4. Interactions 
+    - Like.unlike the post 
+    - Cont views and likes 
+5. Search and filter 
+    - search a post 
+    - Filter by data, category or popularity 
+
+01
+Define User Schema
+Create a Mongoose schema with a role field to distinguish users.
+
+models/User.js
+
+Include fields: username, password, role
+
+Set role default to 'user'
+
+Use enum: ['user','author','admin'] for clarity
+
+02
+Seed Initial Admin
+Bootstrap Account
+Insert a default admin user directly into MongoDB when setting up the system.
+
+Mongo shell or seed script
+
+Hash the password with bcrypt
+
+Insert document: { username: 'rootAdmin', password: <hashed>, role: 'admin' }
+
+Ensure only one admin is seeded
+
+03
+Configure Passport Serialize/Deserialize
+Make sure Passport stores user ID in session and fetches role on deserialize.
+
+passport.js
+
+serializeUser: store user.id
+
+deserializeUser: fetch user from DB → includes role
+
+04
+Build Role Middleware
+Create middleware to check roles before allowing access to routes.
+
+middleware/authorizeRoles.js
+
+Function takes allowed roles
+
+Compare req.user.role against allowed list
+
+Return 403 if not authorized
+
+05
+Admin Dashboard Role Management
+Allow admin to promote users to authors via dashboard routes.
+
+routes/admin.js
+
+Route: POST /admin/promote/:id
+
+Find user by ID
+
+Update role to 'author'
+
+Save changes
+
+06
+User and Author Access
+Define routes with role checks for blog, comments, and interactions.
+
+routes/blog.js
+
+Users: read blogs, comment
+
+Authors: create/update own blogs
+
+Admin: delete any blog, manage users

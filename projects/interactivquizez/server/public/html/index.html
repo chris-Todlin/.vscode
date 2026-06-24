@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Quiz Application</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main>
+        <article class="content">
+            <div class="holder">
+                <h1>Question App</h1>
+
+                <!-- Place for the SCore -->
+                <section class="score">
+                    <p class="complete">
+                        <span>Completed: <span id="posquest">0</span>/ 10</span>
+                        <span><strong>Score: </strong><span id="score">00</span></span>
+                    </p>
+                </section>
+
+                <form name="questions">
+                    <!-- label for the question after being picked up -->
+                    <fieldset>
+                        <legend>What is the capital of France?</legend>
+
+                        <!-- The answers -->
+                        <label><input type="radio" name="quiz" id="answer1"><span class="cont1"></span></label>
+                        <label><input type="radio" name="quiz" id="answer2"><span class="cont1"></span></label></label>
+                        <label><input type="radio" name="quiz" id="answer3"><span class="cont1"></span></label></label>
+                        <label><input type="radio" name="quiz" id="answer4"><span class="cont1"></span></label></label>
+                    </fieldset>
+
+                    <div class="response hide" id="reaction">
+                        <!-- Incase of correct or wrong it places it here -->
+                        <p>
+                        </p>
+                    </div>
+
+                    <!-- Button for the submission -->
+                    <button name="btn" type="submit">Check</button>
+                </form>
+            </div>
+        </article>
+    </main>
+
+    <!-- JavaScript files to set the motion -->
+    <script src="../js/script.js"></script>
+</body>
+</html>

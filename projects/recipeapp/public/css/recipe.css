@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    background-color: blanchedalmond;
+    color: chocolate;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+header {
+    background-color: chocolate;
+    color: white;
+    padding: 1rem;
+    inline-size: 100%;
+    text-align: center;
+}
+
+.recipelist {
+    display: flex;
+    flex-direction: column;
+    inline-size: 100%;
+    padding: 1rem;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+    background-color: whitesmoke;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.list > section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    background-color: beige;
+    padding: 1rem;
+    gap: 0.5rem;
+    height: 100%;
+    font-size: 1.3rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 1px 2px 4px rgba(45,36, 34, 0.2);
+}
+
+.list > section:hover {
+    box-shadow: 0 4px 5px 6px rgba(45,36, 34, 0.2);
+}
+
+.list > section:active {
+    box-shadow: 0 1px 3px rgba(45,36, 34, 0.2);
+}
+
+.list > section > img {
+    width: 100%;
+}
+
+.list p, .recipe p {
+    display: flex;
+    flex-direction: column;
+}
+
+.clickview {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: beige;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin: 0 1rem;
+}
+.recipe {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 80%;
+    align-self: center;
+    padding: 1rem;
+}
+
+.recipe img {
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+ul, ol {
+    list-style-position: inside;
+    margin-left: 1rem;
+    color: maroon;
+}
+
+@media screen and (min-width:1000px){
+    .recipe img {
+        width: 50%;
+        align-self: center;
+    }
+
+    .recipe p {
+        align-self: center;
+    }
+
+    .clickview {
+        width: 98%;
+    }
+
+    .list {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/* For the visible one and not */
+.not-visible {
+    display: none;
+}
+
+button {
+    font-size: 1.4rem;
+    padding: 1rem;
+    align-self: center;
+    width: 70%;
+    outline: none;
+    border: none;
+    background-color: blanchedalmond;
+    border-radius: 0.5rem;
+    color: brown;
+    box-shadow: 0 1px 2px 3px rgba(45,36, 34, 0.2);
+}
+
+button:hover {
+    background-color: #c7a777;
+}
+
+button:active {
+    box-shadow: 0 1px 2px rgba(45,36, 34, 0.2);
+    background-color: #ceb48d;
+}

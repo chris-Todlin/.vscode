@@ -1,0 +1,24 @@
+To Do List App
+
+1. Place where the are notes or main page to add notes
+2. To get personal notes, sign or log in
+3. When I click add note, then I can edit notes. 
+    Then I can see it, edit it or even delete it
+4. I only see the notes involved by me.
+
+first call -> logging -> authorise -> send data(personal)
+
+'''''
+Express
+Morgan
+Authorise middleware
+Handlebars
+
+'''
+lib  : 'auth services' and 'specific'
+routes : 'auth' and 'user'
+public : css and js
+app.js
+package.json
+Node_module
+gitignore

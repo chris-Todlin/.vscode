@@ -1,0 +1,24 @@
+<%# The main task interface %>
+<%- include('./partials/_header.ejs') %>
+    <div class="header mt-4 d-flex justify-content-between align-items-center" style="border-bottom: 2px solid gray;">
+        <h2>Tasks</h2>
+        <a href="/task/addtask" class="btn btn-primary">Add Task</a>
+        <div class="select-container">
+            <b>Filter by:</b> 
+            <select name="cat" id="cat" class=" cat form-select-sm">
+                <option value="general">General</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="school">School</option>
+                    <option value="hobby">Hobby</option>
+            </select>
+        </div>
+    </div>
+    <article class="d-flex tasks flex-column mt-2">
+        <%# Tasks would be here in this case %>
+    </article>
+
+    <%# Js file to do it %>
+    <script src="/js/task.js"></script>
+    <script src="/js/filter.js"></script>
+<%- include('./partials/_footer.ejs') %>

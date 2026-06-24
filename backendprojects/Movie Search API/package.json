@@ -1,0 +1,46 @@
+{
+    "name": "movie-search-api",
+    "private": "true",
+    "version": "1.0.0",
+    "description": "A movie search API, easy to use",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha",
+        "start": "forever app.js"
+    },
+    "keywords": [
+        "movie",
+        "search"
+    ],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "devDependencies": {
+        "chai": "^6.2.2",
+        "forever": "^4.0.3",
+        "mocha": "^11.7.5"
+    },
+    "dependencies": {
+        "axios": "^1.15.2",
+        "bcrypt": "^6.0.0",
+        "bootstrap": "^5.3.8",
+        "compress": "^0.99.0",
+        "compression": "^1.8.1",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "^1.4.7",
+        "csurf": "^1.11.0",
+        "dotenv": "^17.4.2",
+        "ejs": "^5.0.2",
+        "express": "^5.2.1",
+        "express-session": "^1.19.0",
+        "jsonwebtoken": "^9.0.3",
+        "mongoose": "^9.5.0",
+        "morgan": "^1.10.1",
+        "node-cache": "^5.1.2",
+        "passport": "^0.7.0",
+        "passport-jwt": "^4.0.1",
+        "passport-local": "^1.0.0",
+        "path": "^0.12.7",
+        "rotating-file-stream": "^3.2.9"
+    }
+}

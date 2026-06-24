@@ -1,0 +1,35 @@
+<!-- A timer project to start, stop and rest the counter -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <article class="container">
+            <!-- we have a div with the span for the time details -->
+            <div class="wrapper">
+                <div class="time-details">
+                    <span id="hour">00</span>
+                    <span class="dots">:</span>
+                    <span id="min">00</span>
+                    <span class="dots">:</span>
+                    <span id="sec">00</span>
+                </div>
+                <!-- The button place or setion where the are alined -->
+                <div class="control">
+                    <button id="start">Start</button>
+                    <button id="stop">Stop</button>
+                    <button id="reset">Reset</button>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <!-- Add a script for the interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>

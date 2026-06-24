@@ -1,0 +1,31 @@
+<%# This is the main or indexhtml for the application %>
+<%- include('./partials/_header.ejs') %>
+    <%# Section for the invitation into tha application %>
+    <article class="d-flex flex-column gap-3">
+        <section id="#" class="shadow py-2 p-2">
+            <h2>About</h2>
+            <p>
+                Welcome to <em>Book API Library</em>. One of the largest streaming online library in the world.
+                Got a book to add here, you can do it!
+                Oh, you wanna find reading suggestion, we are here for you.
+            </p>
+            <div class="d-flex gap-3 align-items-center">
+                <a class="btn btn-primary" href="/signup">Get started</a>
+                <a class="btn btn-secondary" href="/login">Continue</a>
+            </div>
+        </section>
+
+        <section id="usage" class="shadow py-2 p-2">
+            <h2>Usage</h2>
+            <p>
+                Simple easy and all in a couple of steps:
+            </p>
+            <ul class="list list-group list-group-numbered">
+                <li class="list-group-item">Signin / login</li>
+                <li class="list-group-item">Access the book dashboard</li>
+                <li class="list-group-item">Access the task dashboard</li>
+                <li class="list-group-item">Free to edit and do anything, literally anything.</li>
+            </ul>
+        </section>
+    </article>
+<%- include('./partials/_footer.ejs') %>

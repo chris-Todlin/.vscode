@@ -1,0 +1,23 @@
+{
+  "name": "rest-api-express",
+  "version": "1.0.0",
+  "description": "A comprehensive dive in the TDD",
+  "license": "ISC",
+  "author": "Mwakai Mwadime",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoskin": "^2.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "chai": "^6.2.2",
+    "expect.js": "^0.3.1",
+    "mocha": "^11.7.5",
+    "superagent": "^10.3.0"
+  }
+}

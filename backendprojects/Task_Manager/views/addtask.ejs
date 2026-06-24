@@ -1,0 +1,37 @@
+<%# Login form %>
+<%- include('./partials/_header.ejs') %>
+<section class="d-flex justify-content-center align-items-center">
+    <div class="d-flex flex-column w-2xl justify-content-center p-4 rounded align-items-center">
+        <%# From form the login %>
+        <form action="/addtask" class="form-group form-control" method="post" style="min-width: 42rem; max-height:fit-content">
+            <div class="form-text text-center">
+                <h2>Add Task</h2>
+            </div>
+            <div class="mb-2">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="title" id="title" class="form-control" placeholder="Task Title" required autofocus>
+            </div>
+
+            <div class="mb-2">
+                <label for="category">Category:</label>
+                <select name="category" id="category" class="form-select form-group">
+                    <option value="general">General</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="school">School</option>
+                    <option value="hobby">Hobby</option>
+                </select>
+            </div>
+
+            <div class="mb-2">
+                <label for="description" class="form-label">Description:</label>
+                <textarea class="form-control form-control-plaintext p-2" name="description" id="description" cols="30" placeholder="Description" rows="10" required></textarea>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary">Add Task</button>
+            </div>
+        </form>
+    </div>
+</section>
+<%- include('./partials/_footer.ejs') %>

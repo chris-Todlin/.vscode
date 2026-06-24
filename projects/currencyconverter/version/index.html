@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <article class="container">
+            <div class="holder">
+                <header>
+                    <h1>Currency Converter</h1>
+                </header>
+                <form name="currency">
+                    <div>
+                        <label><input type="text" name="amount" id="amount" placeholder="Enter Amount"></label>
+
+                        <!-- From -->
+                        <label><select name="from" id="from">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="NGN">NGN</option>
+                            <option value="CAD">CAD</option>
+                            <option value="JPY">JPY</option>
+                        </select></label>  <span>to</span>
+                        <!-- To -->
+                        <label><select name="to" id="to">
+                            <option value="USD">USD</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP" selected>GBP</option>
+                            <option value="NGN">NGN</option>
+                            <option value="CAD">CAD</option>
+                            <option value="JPY">JPY</option>
+                        </select></label>
+                    </div>
+                    <!-- Button to convert the thng over -->
+                    <button type="submit">Convert</button>
+                </form>
+
+                <!-- REsult Part -->
+                <section class="result">
+                    <!-- Create a p in the JS and apend the message -->
+                    <p><b>Result: </b><span id="result"></span></p>
+                </section>
+            </div>
+        </article>
+    </main>
+
+    <!-- Script files -->
+    <script src="script.js"></script>
+</body>
+</html>

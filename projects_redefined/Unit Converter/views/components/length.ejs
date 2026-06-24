@@ -1,0 +1,47 @@
+<article class="container tab-pane fade" id="length">
+            <div class="header header-content">
+                <h2>Length</h2>
+            </div>
+            <section class="py-2">
+                <form name="length" action="/convertlength" class="form-control">
+                    <div class="form-label d-flex flex-column">
+                        <label for="magnitude" class="form-label">Magnitude: </label>
+                        <input type="number" name="magnitude" id="magnitude" placeholder="10" min="0" class="form-control" required autofocus>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="from" class="form-label">From: </label>
+                        <%# Select for the value of the from to convert to  %>
+                        <select name="from" id="from" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="mm" class="option-text-width-control" selected>Millimeters</option>
+                            <option value="cm" class="option-text-width-control">Centimeters</option>
+                            <option value="m" class="option-text-width-control">Meters</option>
+                            <option value="km" class="option-text-width-control">Kilometers</option>
+                            <option value="ft" class="option-text-width-control">Foot</option>
+                            <option value="in" class="option-text-width-control">Inches</option>
+                            <option value="yd" class="option-text-width-control">Yard</option>
+                            <option value="mi" class="option-text-width-control">Mile</option>
+                        </select>
+                    </div>
+                    <div class="form-label d-flex flex-column">
+                        <label for="to" class="form-label">To: </label>
+                        <%# Select for the value of the to to convert to  %>
+                        <select name="to" id="to" class="form-select form-group">
+                            <%# place the options now here %>
+                            <option value="mi" class="option-text-width-control">Mile</option>
+                            <option value="yd" class="option-text-width-control">Yard</option>
+                            <option value="in" class="option-text-width-control">Inches</option>
+                            <option value="ft" class="option-text-width-control">Foot</option>
+                            <option value="km" class="option-text-width-control">Kilometers</option>
+                            <option value="m" class="option-text-width-control" selected>Meters</option>
+                            <option value="cm" class="option-text-width-control">Centimeters</option>
+                            <option value="mm" class="option-text-width-control">Millimeters</option>
+                        </select>
+                    </div>
+                    <%# Button for the conversion of the results %>
+                    <div class="d-grid">
+                        <button class="btn btn-primary" type="submit">Convert</button>
+                    </div>
+                </form>
+            </section>
+        </article>

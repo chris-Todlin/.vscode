@@ -1,0 +1,64 @@
+EXPRENSE TRACKER
+
+-> Manage your finances
+-> add EXPRENSE
+->  delete 
+-> view 
+-> Also a summar of the expenses 
+
+    Add 
+-> description 
+-> Amount
+
+    Update 
+-> expense 
+
+    Delete 
+-> expense 
+
+    View All 
+-> Expenses 
+
+-> View a summary 
+
+-> Filter for certain month of the year 
+
+-> Can add categories 
+
+-> Show warning if set limit is set 
+
+-> Export to CSV 
+
+Add error handling to handle invalid inputs and edge cases (e.g. negative amounts, non-existent expense IDs, etc).
+
+// Process to take 
+1. Sign up 
+2. login 
+3. session 
+4. Add 
+5. edit/update 
+6. view 
+7. delete 
+8. Filtering 
+9. Categories 
+10. Limit 
+11. Export to csv 
+
+// Start with the main server setting up 
+
+npm install express express-session ejs mongoose passport passport-strategy morgan rotating-file-stream cookie-parser bcrypt bootstrap connect-flash csv path --save 
+
+// files 
+lib
+model 
+public
+views/partials
+session 
+log 
+routes 
+
+<% infos.forEach(info => { %>
+                <div class="alert alert-info">
+                    <p class="text-info"><%= info %></p>
+                </div>
+            <% }) %>

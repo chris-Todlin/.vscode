@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <article class="container">
+            <div class="holder">
+                <h1>Weather App</h1>
+
+                <!-- Section for the rain  -->
+                <section class="rain">
+                    <strong>Rain</strong>
+                    <p id="rain"></p>
+                </section>
+                <section class="temp">
+                    <strong>Temperature</strong>
+                    <p id="temp"></p>
+                </section>
+                <section class="wind">
+                    <strong>Wind</strong>
+                    <p id="wind"></p>
+                </section>
+
+                <!-- Creating a div for theinformation when the error occurs -->
+                <div class="error visible">
+                    <p>Error fetching data</p>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- Script files -->
+    <script src="script.js"></script>
+</body>
+</html>

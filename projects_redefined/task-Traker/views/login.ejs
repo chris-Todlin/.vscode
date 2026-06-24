@@ -1,0 +1,20 @@
+<%- include('./partials/_header.ejs') %>
+    <div class="container mt-5 mb-4 pb-4">
+        <form action="/login" class="form-control py-6 mb-4 outline-2 flex gap-4 scroll-auto" method="post">
+            <div class="header">
+                <h2>Log In</h2>
+            </div>
+            <div class="form-control mb-1">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" placeholder="username e.g Mwakai" autofocus required>
+            </div>
+            <div class="form-control mb-1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-control d-grid mb-4">
+                <button class="btn btn-primary" type="submit">Log In</button>
+            </div>
+        </form>
+    </div>
+<%- include('./partials/_footer.ejs') %>

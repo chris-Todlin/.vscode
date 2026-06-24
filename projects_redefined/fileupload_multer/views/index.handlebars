@@ -1,0 +1,27 @@
+<div class="container">
+    <form class="form-control was-validated" action="/upload" name="upload" enctype="multipart/form-data" method="post">
+        <h2>Upload File</h2>
+
+        <div class="mb-3">
+            <input type="file" class="form-control" name="file" id="file">
+        </div>
+        <div class="invlaid-feedback">No selected file</div>
+
+        <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+
+    <form action="/deletefile" class="form-control" name="deletefile" method="post">
+        <h2>Delete File</h2>
+
+        <div class="mb-3">
+            <select name="fileName" id="fileSelect"></select>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+
+    <h2>Uploaded Files</h2>
+    <ul id="fileList" class=" list-group">
+        
+    </ul>
+</div>

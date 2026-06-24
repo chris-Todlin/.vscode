@@ -1,0 +1,27 @@
+Ecommerce Website
+
+1. Backend ( Accomplished -- done -- wow you did it boy!)
+ 
+ -> Create the express a pplication - Done
+ -> consfigure the morgan to do the logging of the acess.logging - Done
+ -> set up the express statci anf urlencoded or json -Done
+ -> set up the session and cookie for the user
+ -> create the main page path at / (deffered since the user logs in to have a session of her/his own) - done
+ -> Create a path to fetch the product ( id, name, price, imgpath) - /products -done
+ -> Add path to add to cart(post) using session / product-cart  - Done
+ -> now the path for the view product carted / viewcart - Done
+ -> 400 and 500 paths - Done
+
+2. Frontend
+
+    -> Start with the landing page - Done
+    -> Now the login page - Done
+    -> Start with the main page - Done
+    -> Go to the view cart 
+    -> Deal with the js fetch  (allproduct) - Done
+    -> Deal with the button one on add-to cart() -Done
+    -> view cart link or button connection
+
+NOTE://
+
+    1. Test using post man for the backend, intensive.

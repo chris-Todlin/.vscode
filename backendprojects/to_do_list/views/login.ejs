@@ -1,0 +1,19 @@
+<%- include('./partials/_header.ejs') %>
+<%# Form for loging the user %>
+<section class="container py-4">  
+    <h2 class="text-center">Log In</h2>
+    <form name="login" action="/login" class="form-control" method="post" enctype="application/x-www-form-urlencoded">
+        <div class="gap-2">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" name="username" id="username" placeholder="username" class="form-control" autofocus required>
+        </div>
+        <div class="gap-2">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control" required>
+        </div>
+        <div class="d-grid">
+            <button class="btn btn-primary" type="submit">Add Task</button>
+        </div>
+    </form>
+</section>
+<%- include('./partials/_footer.ejs') %>

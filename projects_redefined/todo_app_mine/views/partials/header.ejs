@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="min-vh-100 d-flex flex-column">
+    <header class="mb-3">
+        <nav class="navbar p-2 navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">Todo App</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav ms-auto">
+                        <%# If the user has logged in %>
+                        <% if (currentUser) { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/task">Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">logout</a>
+                            </li>
+                        <% } else { %>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/signin">Sign in</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">login</a>
+                            </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container flex-grow-1">
+        <%# aRea of the infos from the flash %>
+        <div class="message">
+            <%# Area for the infos %>
+            <% if (infos.length) { %>
+                <%# Create a section for the infos and render tham %>
+                <% infos.forEach(el => { %>
+                    <section class="alert alert-info alert-dismissable">
+                        <button class="btn-close messBtn"></button>
+                        <p class="info"><%= el %></p>
+                    </section>
+                <% }) %>
+            <% } %>
+            <%# Area for the errors %>
+            <% if (errors.length) { %>
+                <%# Create a section for the errors and render tham %>
+                <% errors.forEach(el => { %>
+                    <section class="alert alert-error alert-dismissable">
+                        <button class="btn-close messBtn"></button>
+                        <p class="error"><%= el %></p>
+                    </section>
+                <% }) %>
+            <% } %>
+        </div>

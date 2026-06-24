@@ -1,0 +1,52 @@
+<%- include('./partials/_header.ejs') %>
+    <%# Instructions to play the game are here %>
+    <section class="instructins">
+        <h2>Instructions</h2>
+        <p>
+            Number guessing game involves, you guessing a number and comparing it
+            with the choice of the computer. 
+        </p>
+        <ul>
+            <li>Enter a guess in the guess field.</li>
+            <li>Click the spin button to compare with compute choice.</li>
+            <li>Try again.</li>
+        </ul>
+    </section>
+
+    <section class="results">
+        <h2>Result Chart</h2>
+        <p>
+            This table guides you on the reward system of the game.
+        </p>
+        <%# Table for the result chart %>
+        <table>
+            <thead>
+                <tr>
+                    <th>Score</th>
+                    <th>Meaning</th>
+                    <th>Implication</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+5</td>
+                    <td>Win</td>
+                    <td>You match with the computer choice</td>
+                </tr>
+                <tr>
+                    <td>+2</td>
+                    <td>Draw</td>
+                    <td>Withing a range of 10 from the computer choice.</td>
+                </tr>
+                <tr>
+                    <td>-1</td>
+                    <td>Lose</td>
+                    <td>You are wa out of the range</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            Goodluck. You total score is also shown. To save you're result's sign in.
+        </p>
+    </section>
+<%- include('./partials/_footer.ejs') %>

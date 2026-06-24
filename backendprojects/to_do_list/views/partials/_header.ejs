@@ -1,0 +1,58 @@
+<%# The main page of the file is her the view of the html %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List App</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        header a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <%# The header with the app name %>
+    <header class="container-fluid bg-dark d-flex justify-content-between align-items-center text-light py-2">
+        <h1><a href="/">To Do List</a></h1>
+        <nav class="nav navbar">
+            <%  if(currentUser) { %>
+                <div class=" navbar-nav nav-fill d-flex flex-row gap-2">
+                    <a href="/" class="nav-item navbar-brand text-light">Welcome, <%= currentUser.username %></a>
+                    <a href="/logout" class="nav-item btn btn-primary">Log out</a>
+                </div>
+            <% } else { %>
+                <%# Buttons to login and singup %>
+                <div class=" navbar-nav nav-fill d-flex flex-row gap-2">
+                    <a href="/signup" class="nav-item btn btn-primary">Sign up</a>
+                    <a href="/login" class="nav-item btn btn-primary">Log in</a>
+                </div>
+            <% } %>
+        </nav>
+    </header>
+    <main class="container flex-grow-1">
+        <%# Incase we want ot center the content using CSS %>
+        <div class="cont">
+        
+        <%# Section for the infos of the area %>
+        <% if (infos.length) { %>
+            <section class="alert alert-info alert-dismissible text-center" role="alert">
+                <%# Message to go here %>
+                <button type="button" data-bs-dismiss="alert" class="btn-close"></button>
+                <p><%= infos %></p>
+            </section>
+        <% } %>
+        
+        <%# Section for the message ot appear here %>
+        <section class="hide sectMess alert alert-info text-center" role="alert">
+            <%# Message to go here %>
+            <div class="bod">
+                
+            </div>
+        </section>

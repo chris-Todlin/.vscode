@@ -1,0 +1,18 @@
+<%# The task on to render the form of the task and  the render place of the tasks %>
+<%- include('./partials/_header.ejs') %>
+    <%# Add hte button to add the new todo %>
+    <div class="center mt-4 sticky-top d-flex align-items-center justify-content-center">
+        <div class="button d-flex align-items-center justify-center">
+            <a class="btn btn-primary" href="/addtodo">Add New Todo</a>
+        </div>
+    </div>
+    <%# Section for rendering the tasks %>
+    <section class="mt-2 mb-4">
+        <h2 class="header mb-1">Todos</h2>
+        <ul class="render list gap-2 list-group list-group-numbered list-style-none">
+            <%# List items to be here %>
+        </ul>
+    </section>
+    <%# Adding the script fiel for the drawing of list %>
+    <script src="/js/list.js"></script>
+<%- include('./partials/_footer.ejs') %>

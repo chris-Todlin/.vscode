@@ -1,0 +1,15 @@
+<%- include('./partials/_header.ejs') %>
+    <section class="container tab-content mb-4" style="border: 1px solid #e2dddd; border-top:none">
+        <%# A Section for the weight of the converter %>
+        <%- include('./components/weight.ejs') %>
+
+        <%# Section for the legnth of the conversion form tab %>
+        <%- include('./components/length.ejs') %>
+
+        <%# Section for the temprature conversion tab %>
+        <%- include('./components/temprature.ejs') %>
+        <%# A section for th ediv o a refere to set the temp of the nest one in the nect section of the phase %>
+        <section class="container hidden secthid">
+        </section>
+    </section>
+<%- include('./partials/_footer.ejs') %>

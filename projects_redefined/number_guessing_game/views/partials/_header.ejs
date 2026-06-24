@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <style>
+        .notshowing{
+            display: none;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="container-fluid d-flex align-items-center mb-3 py-4 justify-content-between bg-body-secondary">
+        <h1 class="title"><a href="/" style="text-decoration: none;" class="link link-dark">Number Guessing game</a></h1>
+        <nav class="navbar nav d-flex gap-3 nav-fill navbar-expand d-flex">
+            <%# If there is the user then use this one %>
+            <% if (currentUser) { %>
+                <a class="btn btn-primary nav-item " href="/theme-color">Change Mode</a>
+                <a class="btn btn-primary nav-item" href="/logout">Log Out</a>
+             <% } else { %>
+                <a class="btn btn-primary nav-item" href="/signup">Sign In</a>
+                <a class="btn btn-primary nav-item" href="/login">Log In</a>
+            <% } %>
+        </nav>
+    </header>
+    <% if (currentUser) { %>
+        <%# Section for the greeting the user %>
+        <section class="container-fluid bg-white text-dark outline-sky-700">
+            <p class="text">Welcome, <span><%= currentUser.name() %></span> to our Number Guessing Game.</p>
+        </section>
+    <% } %>
+
+    <%# Section for the infos and the errorsmessages %>
+    <section class="container">
+        <%# For the errors %>
+        <% if (errors.length) { %>
+            <div class="error bg-danger">
+                <% errors.forEach(err => { %>
+                <div class="alert alert-danger alert-dismissible">
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                    <p class="error"><%= err %></p>
+                </div>
+                <% }) %>
+            </div>
+        <% } %>
+
+        <%# For the infos - be positivve %>
+        <% if (infos.length) { %>
+            <div class="info bg-info">
+                <% infos.forEach(info => { %>
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <p class="error"><%= info %></p>
+                    </div>
+                <% }) %>
+            </div>
+        <% } %>
+        <div class="alert divMessage alert-danger alert-dismissible notshowing">
+        </div>
+    </section>
+    <main class="container flex-grow-1">
+        <%# Others now follow down there %>

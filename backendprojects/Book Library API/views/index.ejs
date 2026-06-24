@@ -1,0 +1,70 @@
+<%# Include the header and the footer and then relax manh %>
+<%- include('./partials/_header.ejs') %>
+    <%# Message of error container %>
+    <div class="message">
+    </div>
+    <%# The form for adding or updating the book %>
+    <div class="container formbook box-content shadow-2xs">
+        <h1 class="text-center mb-2">Add Book</h1>
+        <form name="book" class="form-control" action="/book" method="post" role="form" autocorrect="on">
+            <%# ISBN %>
+            <div>
+                <label for="ISBN" class=" form-label">ISBN: </label>
+                <input class="form-control" type="number" min="111111" max="999999" name="ISBN" id="ISBN" required>
+            </div>
+            <%# title %>
+            <div>
+                <label for="title" class=" form-label">Title: </label>
+                <input class="form-control" type="text" name="title" id="title" required>
+            </div>
+            <%# author %>
+            <div>
+                <label for="author" class=" form-label">Author: </label>
+                <input class="form-control" type="text" name="author" id="author" required>
+            </div>
+            <%# genre %>
+            <div>
+                <label for="genre" class=" form-label">Genre: </label>
+                <input class="form-control" type="text" name="genre" id="genre" required>
+            </div>
+            <%# Submit button %>
+            <div class="d-grid mt-2">
+                <button type="submit" class="btn btn-primary">Add Book</button>
+            </div>
+        </form>
+    </div>
+    <%# Place to render the books %>
+    <div class="container books">
+        <h1 class="text-center mb-2">Books</h1>
+        <div class="d-flex gap-2">
+            <h3>Filter By: </h3>
+            <select class="form-select-sm" name="genre" id="genre">
+                <option>Genre</option>
+                <option value="reading">Reading</option>
+                <option value="completed">completed</option>
+            </select>
+            <select class="form-select-sm" name="status" id="status">
+                <option>Status</option>
+                <option value="reading">Reading</option>
+                <option value="completed">completed</option>
+            </select>
+        </div>
+        <%# Now the plce to render the book %>
+        <div class="bold list-group mt-2">
+            <div class=" list-group-item d-flex justify-content-between align-items-center">
+                <p class="d-flex flex-column">
+                    <span class="d-flex">
+                        <span>Title</span>
+                        <span>Genre</span>
+                    </span>
+                    <span>By Mwakai Mwadime</span>
+                </p>
+                <p class="d-flex flex-column gap-2">
+                    <button class="btn btn-primary btn-sm">Edit</button>
+                    <button class="btn btn-primary btn-sm">Delete</button>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="/js/book.js"></script>
+<%- include('./partials/_footer.ejs') %>

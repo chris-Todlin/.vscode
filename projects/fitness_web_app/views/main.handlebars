@@ -1,0 +1,13 @@
+<h2>
+    Welcome to Fitness Tracker
+</h2>
+
+<p>
+    We thank you for the support you have given onto us, we love you!
+</p>
+
+{{#if session}}
+    <button type="button" onclick="location.href = '/login'">Log In</button>
+{{else}}
+    <button type="button" onclick="location.href = '/register'">Register</button>
+{{/if}}

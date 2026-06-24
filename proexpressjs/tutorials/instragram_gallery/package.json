@@ -1,0 +1,28 @@
+{
+  "name": "instragram_gallery",
+  "version": "1.0.0",
+  "description": "How to use express with an external, third party serice",
+  "keywords": [
+    "instragram",
+    "storify",
+    "consolidate",
+    "handlebars",
+    "superagent"
+  ],
+  "license": "ISC",
+  "author": "['name': 'Mwakai Mwadime','email': 'christodlin@gmail.com', 'phone': '+254741536236']",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ",
+    "start":"nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^1.15.2",
+    "bootstrap": "^5.3.8",
+    "consolidate": "^1.0.4",
+    "express": "^5.2.1",
+    "handlebars": "^4.7.9",
+    "superagent": "^10.3.0"
+  }
+}

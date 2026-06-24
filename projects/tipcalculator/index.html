@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator || My Version</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+        A tip has the input for the amount of the  bill and the tip percentage.
+        Plus a place for the output of the total. 
+    -->
+
+    <article class="main-content">
+        <header>
+            <h1>Tip Calculator</h1>
+        </header>
+
+        <section id="input-fields">
+            <form name="tipDetails">
+                <!-- Label for the bill Amount -->
+                <div class="input">
+                    <label for="bill-amount">Bill Amount </label>
+                    <input type="number" name="billAmount" id="bill-amount" placeholder="100" required>
+                </div>
+
+                <!-- Label for the tip Percentage -->
+                <div class="input">
+                    <label for="tip-percentage">Tip Percentage </label>
+                    <input type="number" name="tipPercentage" id="tip-percentage" placeholder="1" required>
+                </div>
+
+                <!-- Button for the submission for the form details -->
+                <button type="submit">Calculate Tip</button>
+            </form>
+        </section>
+
+        <!-- Section for the results -->
+        <section id="output-details">
+            <p class="output"><b>Total Amount :</b><span id="amount-total"></span></p>
+        </section>
+    </article>
+
+    <!-- Place for the scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

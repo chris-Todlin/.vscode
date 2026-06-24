@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temprature Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 
+    A temprature converter has the input for the temprature in celsius and a button to convert it to fahrenheit.
+        Plus a place for the output of the temprature in fahrenheit.  
+        We would use the inpiut.change eventListenre to check the change in them and do the math 
+    -->
+    <div class="container">
+        <!-- We are going to have the section for the input of the temprature output -->
+        <header><h1>Temprature Converter</h1></header>
+        <section class="converter">
+            <!-- Celcuis input -->
+            <label for="cel">Celcius </label>
+            <input type="text" name="tempCel" id="cel">
+
+            <!-- Input for the fahreinheit -->
+            <label for="kel">Kelvin </label>
+            <input type="text" name="tempKel" id="kel">
+
+            <!-- Input for the Kelvin -->
+            <label for="fah">Fahreinheit </label>
+            <input type="text" name="tempFah" id="fah">
+        </section>
+    </div>
+
+    <!-- Script fr interactivity -->
+    <script src="script.js"></script>
+</body>
+</html>

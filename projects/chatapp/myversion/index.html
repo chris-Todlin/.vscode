@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- We are going to have a chat app with a place to render it, input for the message and send -->
+    <article class="content">
+        <!-- A div for the interface viewwinf with scroll -->
+        <div class="history" id="interface">
+            <!-- Messages  are displayed here -->
+            <!-- <p class="mess-me">
+                <span class="me body">Hi</span>
+                <span class="sender1">Me</span>
+            </p>
+            <p class="mess-bot">
+                <span class="bot body">Hi</span>
+                <span class="sender2">Bot</span>
+            </p> -->
+        </div>
+
+        <!-- A form with the input and send button -->
+        <form name="chat">
+            <label><input type="text" name="message" id="message" placeholder="Enter message ..."></label>
+            <label><button type="submit">Send</button></label>
+        </form>
+    </article>
+    <!-- Javascript files for the websocket application -->
+    <script src="script.js"></script>
+</body>
+</html>

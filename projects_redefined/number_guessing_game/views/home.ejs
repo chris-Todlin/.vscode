@@ -1,0 +1,35 @@
+<%- include('./partials/_header.ejs') %>
+    <%# 
+        Include the following in the lisst:
+            -> Instructions
+            -> Info on the game
+            -> Number of the level
+            -> Play button, where I am sent to sign in our login
+    %>
+    <section class="home-about rounded pb-1 bg-body-secondary">
+        <h2>About</h2>
+        <p>
+            Number guessing game is a computer game where you guess a number and compare with the choice of the computer.
+            Depending on the range of if they are equal, you get a score. 
+        </p>
+        <p class="notification">
+            You are advised to <a href="/signup" class="link"> sign up</a> to localize your scores. 
+        </p>
+        <%# Button to get you in the game %>
+        <div class="d-grid m-3 home-btn">
+            <a href="/game/play" type="button" class="btn btn-outline-secondary">Play now</a>
+        </div>
+    </section>
+    <section class="mt-2 home-section p-3 mb-4 bg-body-secondary">
+        <h2>Instructions</h2>
+        <p>
+            Number guessing game involves, you guessing a number and comparing it
+            with the choice of the computer. 
+        </p>
+        <ul>
+            <li>Enter a guess in the guess field.</li>
+            <li>Click the spin button to compare with compute choice.</li>
+            <li>Try again.</li>
+        </ul>
+    </section>
+<%- include('./partials/_footer.ejs') %>

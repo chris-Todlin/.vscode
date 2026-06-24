@@ -1,0 +1,48 @@
+# Ignore workspace-specific and system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Ignore local environment and temporary files
+*.env
+*.local
+*.log
+*.tmp
+*.temp
+*.swp
+*~
+
+# Ignore package manager and build artifacts
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+coverage/
+dist/
+build/
+
+# Ignore editor and IDE settings saved only for this machine
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/*.code-workspace
+
+# Ignore Python caches and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.venv/
+
+# Ignore other generated or temporary folders
+logs/
+.temp/
+.tmp/
+
+# Ignore workspace folders that are project, learning, or extension directories
+extensions/
+learnjwt/
+cli/
+definite_guide_css/

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion - Web Version</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <style>
+        .hidden {
+            display: none;
+        }
+        .maxwidth {
+            max-width: 800px;
+        }
+    </style>
+    <script defer src="/js/temprature.js"></script>
+</head>
+<body class="d-flex flex-column min-vh-100">
+    <header class="navbar container-fluid bg-dark text-light py-1 pl-3">
+        <h1>Unit Conversion</h1>
+    </header>
+    <nav class="container mt-4 maxwidth">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="#weight" class="nav-link active" data-bs-toggle="tab">Weight</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#length" class="nav-link" data-bs-toggle="tab">Length</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#temprature" class="nav-link" data-bs-toggle="tab">Temprature</a>
+                </li>
+            </ul>
+        </nav>
+    <main class="container flex-grow-1 tab-content maxwidth">

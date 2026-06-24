@@ -1,0 +1,41 @@
+<%# This is the movie search part of the list:  search, results and the history %>
+<%- include('./partials/_header.ejs') %> <%# Header %>
+    <article class="d-flex flex-column gap-3">
+        <%# Search place %>
+        <div class="container search">
+            <h2 class="mb-2">Movie Search</h2>
+            <section class="form-control d-flex group btn-group">
+                <input type="search" id="searchinput" class=" form-control" name="movie" id="movie" placeholder="Search ...">
+                <button type="submit" id="searchbtn"  class="btn btn-primary">Search</button>
+            </section>
+        </div> 
+
+        <%# Section for the result with a card %>
+        <section class="res form-control search-result-active">
+            <div class="card" id ="${el.imdbID}-${el.Type}">
+                            <div class="card-img-top">
+                                <img src="${el.Poster}" alt="image">
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <div class="d-flex gap-1">
+                                    <h3 class="card-title">${el.Title} :</h3>
+                                    <h3>${el.Year}</h3>
+                                </div>
+                                <div class="butt">
+                                    <button id="${el.Title}" class="fav btn">Favourite</button>
+                                    <button class="saveTask btn">Save As Task</button>
+                                </div>
+                            </div>
+                        </div>
+        </section>
+
+        <%# Section for the history %>
+        <section class="history mb-3">
+            <h2>Favourite</h2>
+            <%# An array going to kep them active in the background or can save them in the db latter %>
+            <ul class="list favlist list-group mt-2">
+            </ul>
+        </section>
+    </article>
+    <script src="/js/moviesearch.js"></script> <%# The fiel to handle the search an dall that %>
+<%- include('./partials/_footer.ejs') %> <%# footer %>

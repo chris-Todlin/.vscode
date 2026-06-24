@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color:bisque;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+form {
+    padding: 1rem;
+    box-shadow: 0 2px 4px 6px rgba(45,32,14,0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: 0.4rem;
+    width: 70vw;
+    max-width: 700px;
+}
+
+.error {
+    width: 100%;
+    background-color: brown;
+    color: burlywood;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    font-size: 1.3rem;
+}
+
+.visible {
+    display: flex;
+}
+
+.invisible {
+    display: none;
+}
+
+h1 {
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+label {
+    align-self: flex-start;
+}
+
+.button {
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+input, textarea {
+    font-size: 1.2rem;
+    padding: 0.4rem 0.2em;
+    border-radius: 0.2em;
+    width: 100%;
+}
+
+button {
+    background-color: goldenrod;
+    color: firebrick;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    width: 50%;
+    align-self: center;
+}
+
+button:hover {
+    color: whitesmoke;
+}

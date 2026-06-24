@@ -1,0 +1,28 @@
+<%- include('./partials/_header.ejs') %>
+    <div class="container mt-5 mb-4 pb-4">
+        <form action="/taskapp/addtask" class="form-control py-6 mb-4 outline-2 flex gap-4 scroll-auto" method="post">
+            <div class="header">
+                <h2>Add Task</h2>
+            </div>
+            <div class="form-control-mb-1">
+                <label for="status" class="form-label">Status</label>
+                <select class="group mb-2 py-1 gap-4" name="status" id="status">
+                    <option class="option-text" value="todo">todo</option>
+                    <option class="option-text" value="in-progress" selected>In-progress</option>
+                    <option class="option-text" value="done">Done</option>
+                </select>
+            </div>
+            <div class="form-control mb-1">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" placeholder="title e.g Mwakai" autofocus required>
+            </div>
+            <div class="form-control mb-1">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control-plaintext" name="description" id="description" cols="30" rows="10" placeholder="Description ..." required></textarea>
+            </div>
+            <div class="form-control d-grid mb-4">
+                <button class="btn btn-primary" type="submit">Save Task</button>
+            </div>
+        </form>
+    </div>
+<%- include('./partials/_footer.ejs') %>

@@ -1,0 +1,14 @@
+<%# This is the 404 error path of the server %>
+<%- include('./partials/header.ejs') %>
+    <%# Section for the error ,message %>
+    <div id="error"  class="overlay">
+        <section class="d-flex flex-column align-content-center justify-content-center alert alert-danger text-center">
+            <h2>404 - Resource Not Found</h2>
+            <% if (currentUser) { %>
+                <a href="/task" class="btn btn-secondary">Go back</a>
+            <% } else { %>
+                <a href="/" class="btn btn-secondary">Go back</a>
+            <% } %>
+        </section>
+    </div>
+<%- include('./partials/footer.ejs') %>

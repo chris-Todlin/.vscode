@@ -1,0 +1,32 @@
+<%# This is the main layout of the page, the one to use across all the ones we have %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <%# Attach the css bootstrap file here %>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body class="min-vh-100 d-flex flex-column">
+    <header class="header header-font-size d-flex p-2 justify-content-between align-items-center py-2 bg-dark text-light">
+        <h1><a href="/" style="text-decoration: none; color:inherit">Task Manager</a></h1>
+
+        <%# If current user then add the name and logout btn %>
+        <% if (currentUser) { %>
+            <div class="d-flex gap-2 align-items-center">
+                <a href="/tasks" class="text-white btn">Welcome, <%= currentUser.name() %></a>
+                <a href="/logout" class="btn btn-sm btn-primary">Log out</a>
+            </div>
+        <% } %>
+    </header>
+
+    <% if (infos.length) { %>
+        <%# Section for ht emssage to the user %>
+        <section class="alert container alert-dismissable bg-info alert-info mt-2" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            <p class="info"><%= infos %></p>
+        </section>
+    <% } %>
+    <%# The body goes in here %>
+    <main class="container flex-grow-1">

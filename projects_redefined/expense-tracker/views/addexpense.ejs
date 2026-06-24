@@ -1,0 +1,18 @@
+<%- include('./partials/_header.ejs') %>
+<main class="container">
+    <form action="/expense/addexpense" method="post" role="form" class="form-control max-w-4xl mb-4">
+        <div class="header ml-5 mb-4">
+            <h2>Add Expense</h2>
+        </div>
+        <div class="form-control mb-4">
+            <input type="text" name="description" id="description" class="form-control" placeholder="Description" required autofocus>
+        </div>
+        <div class="form-control mb-4">
+            <input type="number" min="0" name="amount" class="form-control" id="amount" placeholder="Amount" required>
+        </div>
+        <div class="d-grid">
+            <button type="submit" class="btn btn-primary">Add Expense</button>
+        </div>
+    </form>
+</main>
+<%- include('./partials/_footer.ejs') %>

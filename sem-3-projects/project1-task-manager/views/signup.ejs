@@ -1,0 +1,27 @@
+<%- include('./partials/main.ejs') %>
+    <!-- The body ff the form -->
+    <section class="signForm">
+        <form action="/user/signup" method="post">
+            <div class="heading">
+                <h2>Sign Up</h2>
+            </div>
+            <div class="sect">
+                <label for="username">Username: </label>
+                <input type="text" name="username" id="username" required autocomplete="username">
+            </div>
+            <div class="sect">
+                <label for="password">Password: </label>
+                <input type="password" name="password" id="password" required autocomplete="password">
+            </div>
+            <div class="sect">
+                <label for="repass">Re-enter password: </label>
+                <input type="password" name="repass" id="repass" required autocomplete="password">
+            </div>
+            <span id="message"></span>
+            <div class="button">
+                <button type="submit">Sign In</button>
+            </div>
+        </form>
+    </section>
+    <script src="/js/formsubmit.js"></script>
+<%- include('./partials/footer.ejs') %>

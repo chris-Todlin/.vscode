@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsives</title>
+        <link rel="stylesheet" href="../../src/output.css">
+    </head>
+    <body>
+        <div class="w-36 position-absolute top-4 right-3 h-36 bg-pink-500 sm:bg-red-500 md:bg-green-500 lg:bg-gray-500 xl:bg-blue-500 2xl:bg-gray-200"></div>
+
+        <div class="dark">
+            <div class="h-10 w-10 bg-green-400 dark:bg-red-500"></div>
+        </div>
+
+        <div class="m-4">
+            <div class="flex justify-center w-40" id="parentDiv">
+                <div class="flex flex-col">
+                    <div class="flex justify-center">
+                        <div class="h-20 w-20 bg-green-400 dark:bg-red-500"></div>
+                    </div>
+                    <button class="bg-blue-600 mt-5 p-1 rounded"> Change Mode</button>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const btn = document.querySelector('button');
+
+            function changeMode(){
+                const parentDiv = document.querySelector('#parentDiv');
+                if(parentDiv.classList.contains('dark')){
+                    parentDiv.classList.remove('dark');
+                } else {
+                    parentDiv.classList.add('dark');
+                }
+            }
+
+            btn.addEventListener('click', changeMode);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,11 @@
+body {
+    background: linear-gradient(90deg,blanchedalmond,blanchedalmond);
+}
+
+header,footer {
+    background-color: #473d3d;
+}
+
+.notask {
+    height: 60vh;
+}

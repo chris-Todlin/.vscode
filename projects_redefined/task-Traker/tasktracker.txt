@@ -1,0 +1,42 @@
+Track and Manage your tasks. 
+
+Your - personal - Login/signup
+Track - view or find 
+Manage - Edit/ delete or add 
+
+FLOW OF INFO 
+ 1. I enter the task and its details 
+ 2. It goes and get save under my name.
+ 3. Then I view it
+ 4. Edit or can delete it
+
+ USER DETAILS
+ 1. username
+ 2. Password 
+
+ TASK DETAILS 
+
+1. title 
+2. Description
+3. Status {'todo', 'in-progress', 'done'}
+4. createdAt 
+5. UpdatedAt
+
+List of the task as the coder/programmer
+
+-> Setting the express application (basic) - done
+-> Setting the mongo -done
+-> Setting the bcrypt for the password hashing - done
+-> Setting the login and signup functionality
+-> Setting the session of the user
+-> Now the functionality to add task 
+-> The one to edit and view task 
+-> One to delete task 
+-> Winding up with any new future you want to add
+
+Process Task
+taskroute.js
+-Add 
+- Update
+- Delete 
+-View 

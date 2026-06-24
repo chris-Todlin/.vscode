@@ -1,0 +1,55 @@
+<%# Landiing page %>
+<%- include('./partials/_header.ejs') %>
+    <div class="bg-secondary-subtle mt-4 mb-4 p-3 d-flex flex-column gap-3 rounded-2xl">
+        <section class="info">
+            <h2 class="text-secondary">
+                Task Manager - Introduction
+            </h2>
+            <p>
+                Welcome to our Task Manager, we help you manage them. 
+                Don't worry of dubious names or you phone memory, we save that for you.
+            </p>
+            <% if (!currentUser) { %>
+                <div class="btn-group">
+                    <a href="/login" class="btn btn-primary" type="button">Login</a>
+                    <a href="/signup" class="btn btn-secondary" type="button">Sign up</a>
+                </div>
+            <% } %>
+        </section>
+
+        <section class="about">
+            <h2>About</h2>
+            <p>
+                For you to create and do some changes in your tasks, you must first be authenticated.
+                If new, <b>signup</b>, else <em>login</em>.
+            </p>
+        </section>
+
+        <section class="instructions">
+            <h2>Instructions</h2>
+            <ul class="list list-decimal">
+                <li class="list-item">Login / signup</li>
+                <li class="list-item">Create a task and view it</li>
+                <li class="list-item">Delete the task at will.</li>
+                <li class="list-item">Edit task at will.</li>
+                <li class="list-item">Log out.</li>
+            </ul>
+
+            <p class="mt-1 text-danger">
+                Please we don't store offensive languages in the task or killing spree tasks!!!
+            </p>
+        </section>
+
+        <section class="right bg-light rounded p-2">
+            <h2>Copyright</h2>
+            <p>
+                We don't share your information with anyone in the site or across the platform.
+                We try to personalise them as tight coupled as possible.
+            </p>
+            <p>
+                In case of theft due to our side we accept the liablity but if 
+                you caused it, we are not liable.
+            </p>
+        </section>
+    </div>
+<%- include('./partials/_footer.ejs') %>
