@@ -1,0 +1,12 @@
+<%- include('./partials/main.ejs') %>
+    <section class="dashboardPage">
+        <div class="dashboardCard">
+            <h2>Welcome, <%= user.username %>!</h2>
+            <p>Account created on <strong><%= user.createdAt.toLocaleDateString() %></strong></p>
+            <p><strong>Bio:</strong> <%= user.bio || 'No bio provided yet.' %></p>
+            <form action="/user/logout" method="post">
+                <button class="btn secondary" type="submit">Logout</button>
+            </form>
+        </div>
+    </section>
+<%- include('./partials/footer.ejs') %>

@@ -1,0 +1,22 @@
+<%- include('./partials/main.ejs') %>
+    <section class="signForm">
+        <form action="/user/login" method="post" id="loginForm">
+            <div class="heading">
+                <h2>Login</h2>
+            </div>
+            <div class="sect">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" required autocomplete="username">
+            </div>
+            <div class="sect">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required autocomplete="current-password">
+            </div>
+            <span id="message"></span>
+            <div class="button">
+                <button type="submit">Log In</button>
+            </div>
+        </form>
+    </section>
+    <script src="/js/login.js"></script>
+<%- include('./partials/footer.ejs') %>

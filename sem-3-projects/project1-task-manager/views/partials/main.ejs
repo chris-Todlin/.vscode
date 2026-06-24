@@ -11,8 +11,17 @@
         <h1>Task Manager</h1>
 
         <ul class="listHeader">
-            <li><a href="/user/login">Login</a></li>
-            <li><a href="/user/signup">Sign up</a></li>
+            <% if (currentUser) { %>
+                <li><a href="/user/dashboard">Dashboard</a></li>
+                <li>
+                    <form action="/user/logout" method="post" class="navLogoutForm">
+                        <button type="submit" class="navButton">Logout</button>
+                    </form>
+                </li>
+            <% } else { %>
+                <li><a href="/user/login">Login</a></li>
+                <li><a href="/user/signup">Sign up</a></li>
+            <% } %>
         </ul>
     </header>
     <main>

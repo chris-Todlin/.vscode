@@ -34,32 +34,52 @@
 
     // function to submit the data 
     async function sendDataToServer(formName){
+        const messageEL = document.getElementById("message");
+        const data = getData(formName);
+
+        if(!data){
+            return;
+        }
+
         try{
             const res = await fetch(formName.action,{
                 method: 'POST',
-                headers: { "Content-type":"application/json"},
-                body: JSON.stringify(getData(formName))
+                headers: { "Content-type":"application/json","Accept":"application/json" },
+                body: JSON.stringify(data)
             });
 
-            const body = await res.json()
+            const body = await res.json();
+            const message = body?.message || body || 'Unexpected response';
+            const success = res.ok && body?.success !== false;
 
-            if(res.ok){
-                alert(body)
+            messageEL.textContent = message;
+            messageEL.className = success ? 'message success' : 'message error';
+            messageEL.style.display = 'block';
 
-                if(res.redirected){
-                    location.href = res.url;
-                }
+            if(success){
+                setTimeout(() => {
+                    messageEL.style.display = 'none';
+                    if(body.redirect){
+                        location.href = body.redirect;
+                    }
+                }, 2400);
             } else {
-                alert('Failure in response')
+                setTimeout(() => {
+                    messageEL.style.display = 'none';
+                }, 3000);
             }
         } catch(e){
-            alert(e);
+            const messageEL = document.getElementById("message");
+            messageEL.textContent = 'Unable to submit signup form. Please try again.';
+            messageEL.className = 'message error';
+            messageEL.style.display = 'block';
+            setTimeout(() => messageEL.style.display = 'none', 3000);
         }
     }
 
     // trial with from 
     document.forms[0].addEventListener('submit',(e)=>{
-        //e.preventDefault();
+        e.preventDefault();
         sendDataToServer(e.target);
     })
 })()
