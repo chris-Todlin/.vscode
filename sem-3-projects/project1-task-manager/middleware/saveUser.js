@@ -9,24 +9,38 @@ module.exports = async function(req,res, next){
         const user = await User.findOne({username: data.username});
 
         if(user){
-            return res.json("User already exists");
+            return res.status(409).json({ success: false, message: 'User already exists' });
         }
 
         // else create the user
         await User.create({
-            username: data.username, 
+            username: data.username,
             password: data.password,
             bio: ''
         });
 
         console.log('User Created!');
 
-        // sig in the user now
-        await passport.authenticate('login',{
-            failureMessage: "Incorrect password or username",
-            failureRedirect: "/user/login",
-            successMessage: "Logged In",
-            successRedirect: "/"
+        passport.authenticate('login', function(err, user, info){
+            if(err){
+                return next(err);
+            }
+
+            if(!user){
+                return res.status(401).json({ success: false, message: info?.message || 'Login failed after signup' });
+            }
+
+            req.logIn(user, function(err){
+                if(err){
+                    return next(err);
+                }
+
+                if(req.get('Accept')?.includes('application/json')){
+                    return res.json({ success: true, message: 'Signup successful. Redirecting...', redirect: '/' });
+                }
+
+                return res.redirect('/');
+            });
         })(req,res,next);
     }
     catch(e){
