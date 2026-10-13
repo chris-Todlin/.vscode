@@ -48,4 +48,15 @@ learnjwt/
 cli/
 definite_guide_css/
 pythonLearn/
-Trial Tests
+Trial Tests/
+
+# Exclude requested file types and reference material
+*.txt
+*.xlsx
+*.xlxs
+resource/
+resources/
+
+# Keep personal example data out of the repository
+learn_program_projects/json_file/user.json
+learn_program_projects/project_pesa_messages/program_file/data.csv
