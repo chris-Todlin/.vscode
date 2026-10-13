@@ -49,6 +49,7 @@ cli/
 definite_guide_css/
 pythonLearn/
 Trial Tests/
+gui_py
 
 # Exclude requested file types and reference material
 *.txt
