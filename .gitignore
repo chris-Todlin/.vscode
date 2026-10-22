@@ -57,6 +57,7 @@ gui_py/
 *.xlxs
 resource/
 resources/
+projects_150_deal/
 
 # Keep personal example data out of the repository
 learn_program_projects/json_file/user.json
