@@ -50,6 +50,7 @@ definite_guide_css/
 pythonLearn/
 Trial Tests/
 gui_py/
+tester_dir/
 
 # Exclude requested file types and reference material
 *.txt
