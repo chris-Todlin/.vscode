@@ -36,6 +36,7 @@ __pycache__/
 venv/
 env/
 .venv/
+.vs/
 
 # Ignore other generated or temporary folders
 logs/
