@@ -52,6 +52,7 @@ pythonLearn/
 Trial Tests/
 gui_py/
 tester_dir/
+rapid_gui/
 
 # Exclude requested file types and reference material
 *.txt
